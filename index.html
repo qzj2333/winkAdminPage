@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='en' class="htmlPage">
+    <head>
+        <title>Wink Admin Page</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="function.js"></script>
+    </head>
+
+    <body>
+        <div class="nav">
+          <a href="#">Home</a>
+        </div>
+
+          <div id="home">
+            <div id="homePicture"></div>
+            <div id="homeContent">
+                <h1>Wink APP Data Track</h1>
+                <h4>Please login first!</h4>
+                <button id="homeButton">Login</button>
+          </div>
+        </div>
+
+        <!--login-->
+        <div class='signInModal form-popup'>
+            <div class="modal-content">
+                <div id="closeSignIn">+</div>
+                <p>Username: <input type="text" id="usernameSignIn"  placeholder="Username"></p>
+                <p>Password: <input type="password" id="passwordSignIn" placeholder="Password"></p>
+                <button type="Submit" class="btn" id="signInBn">Login</button>
+            </div>
+        </div>
+ 
+        
+        <script>
+          document.getElementById("homeButton").addEventListener("click", showSignInBox, false);
+          document.getElementById("closeSignIn").addEventListener("click", closeSignInForm, false);
+          document.getElementById("signInBn").addEventListener("click", signIn, false);
+        </script>
+    </body>
+</html>

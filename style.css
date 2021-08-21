@@ -1,0 +1,135 @@
+body, .htmlPage
+{
+    height: 100%;
+    margin: 0;
+    background-color:#144cff;
+}
+
+p
+{
+    font-weight: bold;
+    line-height: 20pt;
+}
+
+.nav {
+    overflow: hidden;
+    background-color: #651ffe;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .nav a:hover {
+    background: #79e2dd;
+    color: #f2f2f2;
+  }
+
+#home
+{
+    display: grid;
+    margin: -20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));;
+    height: 100%;
+    background-color: #144cff;
+}
+
+#homePicture
+{
+    background-image: url("home.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 105%;
+    margin-left: 2%;
+}
+
+#homeContent
+{
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    color: #ffffff;
+    text-shadow: 2px 2px #651ffe;
+}
+
+#homeButton
+{
+    background-color: #651ffe;
+    border: none;
+    color: #fafafa;
+    margin-top: 5%;
+    padding: 5% 20%;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+/* sign in */
+.signInModal
+{
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.modal-content
+{
+    width:  300px;
+    height: 300px;
+    background-color: white;
+    border-radius: 4px;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+}
+
+.input
+{
+    width: 80%;
+    display: black;
+    margin: 50px auto;  /* distance between two input box */
+}
+
+.btn {
+    background-color: #651ffe;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    margin-bottom:10px;
+    opacity: 0.8;
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+#closeSignIn
+{
+    position: absolute;
+    top: 0;
+    right: 14px;
+    font-size: 42px;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+
+/* main page */
+#logout
+{
+    float: right;
+}

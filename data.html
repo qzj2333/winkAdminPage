@@ -12,7 +12,7 @@
 
         <script>
           $(document).ready(function () {
-              if(window.location.href.contains("?result=success") > -1) {
+              if(window.location.href.indexOf("?result=success") > -1) {
                 console.log("success!"); 
                 alert("Success!");
               }

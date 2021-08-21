@@ -32,7 +32,7 @@ function logout()
 function uploadToGoogleSheet()
 {
     // goto google apps script which uploads data from mongoDB to google sheet
-    window.location.href = "https://script.google.com/macros/s/AKfycbySuncdxexGd9Q3-ouNwVgNFFyT6EgWS3vtV-_mQCQ6hY3N5Z7JJwH8vFIqw7coT7tU/exec";
+    window.location.href = "https://script.google.com/macros/s/AKfycbzqgYdiQuJRqoFwPy5Bf4s0UjoyI8fpAQHz7iFwzFBuoqrIcGgNXhywV45AzRZUgZL_/exec";
 }
 
 function deleteMongoDBData()

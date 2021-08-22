@@ -38,23 +38,23 @@ function uploadToGoogleSheet()
 function onSuccess()
 {
     deleteMongoDBData();
-    //window.location.href = "data.html";
+    window.location.href = "data.html";
 }
 
 function deleteMongoDBData()
 {
     console.log("going to delete!");
-    // fetch('/clicked', {method: 'POST'})
-    // .then(function(response) {
-    //   if(response.ok) {
-    //     console.log('Data is deleted!');
-    //     return;
-    //   }
-    //   throw new Error('Request failed.');
-    // })
-    // .catch(function(error) {
-    //   console.log(error);
-    // });  
+    fetch('/clicked', {method: 'POST'})
+    .then(function(response) {
+      if(response.ok) {
+        console.log('Data is deleted!');
+        return;
+      }
+      throw new Error('Request failed.');
+    })
+    .catch(function(error) {
+      console.log(error);
+    });  
 }
 
 function getDailyActiveUsers()

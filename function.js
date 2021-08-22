@@ -46,7 +46,7 @@ function checkDataUpload()
 
 function deleteMongoDBData()
 {
-    console.log("going to delete!")
+    console.log("going to delete!");
     // fetch('/clicked', {method: 'POST'})
     // .then(function(response) {
     //   if(response.ok) {

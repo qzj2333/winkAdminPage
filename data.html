@@ -9,18 +9,10 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script src="function.js"></script>
-
-        <script>
-          $(document).ready(function () {
-              if(window.location.href.indexOf("?result=success") > -1) {
-                console.log("success!"); 
-                alert("Success!");
-              }
-          });
-        </script>
     </head>
 
     <body>
+
         <div class="nav">
           <a href="index.html">Home</a>
           <a href="#">Data Display</a>
@@ -43,6 +35,8 @@
  
         
         <script>
+          document.addEventListener("DOMContentLoaded", checkDataUpload);
+});
           document.getElementById("logout").addEventListener("click", logout, false);
           document.getElementById("upload").addEventListener("click", uploadToGoogleSheet, false);
           document.getElementById("DAU").addEventListener("click", getDailyActiveUsers, false);

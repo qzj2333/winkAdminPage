@@ -35,13 +35,10 @@ function uploadToGoogleSheet()
     window.location.href = "https://script.google.com/macros/s/AKfycbzqgYdiQuJRqoFwPy5Bf4s0UjoyI8fpAQHz7iFwzFBuoqrIcGgNXhywV45AzRZUgZL_/exec";
 }
 
-function checkDataUpload()
+function onSuccess()
 {
-    if(window.location.href.indexOf("?result=success") > -1) 
-    {
-        console.log("success!"); 
-        alert("Success!");
-      }
+    deleteMongoDBData();
+    window.location.href = "data.html";
 }
 
 function deleteMongoDBData()

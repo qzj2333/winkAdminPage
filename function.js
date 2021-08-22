@@ -47,6 +47,7 @@ function deleteMongoDBData()
     fetch('https://winkcrushes.com/wink/admin/deleteUploadData', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
+        console.log(response);
         console.log('Data is deleted!');
         return;
       }

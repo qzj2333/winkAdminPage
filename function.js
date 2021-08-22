@@ -46,17 +46,18 @@ function checkDataUpload()
 
 function deleteMongoDBData()
 {
-    fetch('/clicked', {method: 'POST'})
-    .then(function(response) {
-      if(response.ok) {
-        console.log('Data is deleted!');
-        return;
-      }
-      throw new Error('Request failed.');
-    })
-    .catch(function(error) {
-      console.log(error);
-    });  
+    console.log("going to delete!")
+    // fetch('/clicked', {method: 'POST'})
+    // .then(function(response) {
+    //   if(response.ok) {
+    //     console.log('Data is deleted!');
+    //     return;
+    //   }
+    //   throw new Error('Request failed.');
+    // })
+    // .catch(function(error) {
+    //   console.log(error);
+    // });  
 }
 
 function getDailyActiveUsers()

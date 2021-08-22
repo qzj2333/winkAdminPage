@@ -38,7 +38,7 @@ function uploadToGoogleSheet()
 function onSuccess()
 {
     deleteMongoDBData();
-    window.location.href = "data.html";
+    //window.location.href = "data.html";
 }
 
 function deleteMongoDBData()

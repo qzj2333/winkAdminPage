@@ -44,7 +44,7 @@ function onSuccess()
 function deleteMongoDBData()
 {
     console.log("going to delete!");
-    fetch('/clicked', {method: 'POST'})
+    fetch('https://winkcrushes.com/wink/admin/deleteUploadData', {method: 'POST'})
     .then(function(response) {
       if(response.ok) {
         console.log('Data is deleted!');

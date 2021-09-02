@@ -32,11 +32,9 @@ function logout()
 function displayCurrentDateTime()
 {
     var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate() + "  " + today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     console.log(date);
-    document.getElementById("currentDate").value = date;
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    document.getElementById("currentTime").value = time;
+    document.getElementById("currentDate").innerHTML = date;
 }
 
 function goToCSV()

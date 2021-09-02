@@ -31,14 +31,13 @@ function logout()
 
 function goToCSV()
 {
-    console.log("csv!");
     window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
 }
 
 function getDailyActiveUsers()
 {
     var chart = document.getElementById("chart");
-    var canvas = document.getElementById("canvas");
+    //var canvas = document.getElementById("canvas");
     //chart.style.background = "#FFFFFF";
     //chart.style.border = "none";
     //chart.style.borderRadius = "2px";

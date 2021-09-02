@@ -37,20 +37,20 @@ function goToCSV()
 
 function getDailyActiveUsers()
 {
-    var chart = document.createElement("iframe");
+    var chart = document.getElementById("chart");
     var canvas = document.getElementById("canvas");
-    chart.style.background = "#FFFFFF";
-    chart.style.border = "none";
-    chart.style.borderRadius = "2px";
-    chart.style.boxShadow = "0 2px 10px 0 rgba(70, 76, 79, .2)";
-    chart.width = "640";
-    chart.height = "480";
+    //chart.style.background = "#FFFFFF";
+    //chart.style.border = "none";
+    //chart.style.borderRadius = "2px";
+    //chart.style.boxShadow = "0 2px 10px 0 rgba(70, 76, 79, .2)";
+    //chart.width = "640";
+    //chart.height = "480";
     chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=2be3bdf5-f7c2-4a36-8c66-d500b404eeff&autoRefresh=300&theme=light";
-    if(canvas.firstChild)
-    {
-        canvas.removeChild(canvas.firstChild);
-    }
-    canvas.appendChild(chart);
+    // if(canvas.firstChild)
+    // {
+    //     canvas.removeChild(canvas.firstChild);
+    // }
+    // canvas.appendChild(chart);
 }
 
 function getWeeklyActiveUsers()

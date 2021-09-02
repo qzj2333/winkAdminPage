@@ -5,6 +5,11 @@ body, .htmlPage
     background-color:#144cff;
 }
 
+h1
+{
+    text-align: center;
+}
+
 p
 {
     font-weight: bold;

@@ -31,7 +31,7 @@ function logout()
 
 function goToCSV()
 {
-    console.log("csv");
+    console.log("csv!");
     window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
 }
 

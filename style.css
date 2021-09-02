@@ -154,3 +154,9 @@ p
     width: 640;
     height:480;
 }
+
+#dateTime
+{
+    text-align: center;
+    display: inline;
+}

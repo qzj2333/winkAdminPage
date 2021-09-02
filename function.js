@@ -37,6 +37,30 @@ function displayCurrentDateTime()
     document.getElementById("currentDate").innerHTML = date;
 }
 
+function displayCurrentUserCount()
+{
+    getapi("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+}
+
+function displayCurrentUsedStorage()
+{
+
+}
+
+async function getapi(url) {
+    
+    // Storing response
+    const response = await fetch(url);
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    console.log(data);
+    if (response) {
+        //
+    }
+    //show(data);
+}
+
 function goToCSV()
 {
     window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
@@ -45,19 +69,7 @@ function goToCSV()
 function getDailyActiveUsers()
 {
     var chart = document.getElementById("chart");
-    //var canvas = document.getElementById("canvas");
-    //chart.style.background = "#FFFFFF";
-    //chart.style.border = "none";
-    //chart.style.borderRadius = "2px";
-    //chart.style.boxShadow = "0 2px 10px 0 rgba(70, 76, 79, .2)";
-    //chart.width = "640";
-    //chart.height = "480";
     chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=2be3bdf5-f7c2-4a36-8c66-d500b404eeff&autoRefresh=300&theme=light";
-    // if(canvas.firstChild)
-    // {
-    //     canvas.removeChild(canvas.firstChild);
-    // }
-    // canvas.appendChild(chart);
 }
 
 function getWeeklyActiveUsers()

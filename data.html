@@ -24,8 +24,10 @@
         <div id="main">
             <br /><br /><br />
             <h1>Data Display</h1>
-            <div id="dateTime">
+            <div id="flashStats">
               <h3 id="currentDate">Current Date: </h3>
+              <h3 id="currUserCount"></h3>
+              <h3 id="currUsedStorage"></h3>
             </div>
             <div id="canvas"><iframe id="chart"></iframe></div>
             <div id="btnList">
@@ -39,6 +41,8 @@
         
         <script>
           document.addEventListener("DOMContentLoaded", displayCurrentDateTime);
+          document.addEventListener("DOMContentLoaded", displayCurrentUserCount);
+          document.addEventListener("DOMContentLoaded", displayCurrentUsedStorage);
           document.getElementById("logout").addEventListener("click", logout, false);
           document.getElementById("dataCSV").addEventListener("click", goToCSV, false);
           document.getElementById("DAU").addEventListener("click", getDailyActiveUsers, false);

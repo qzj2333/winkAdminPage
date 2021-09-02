@@ -140,6 +140,11 @@ p
 }
 
 /* data page */
+#canvas
+{
+    text-align: center;
+}
+
 #chart
 {
     background: "#FFFFFF";

@@ -39,7 +39,9 @@ function displayCurrentDateTime()
 
 function displayCurrentUserCount()
 {
-    getapi("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    var result = getapi("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    console.log(result.numberLong);
+    document.getElementById("currUserCount").innerHTML = "Current Users: " + result.numberLong;
 }
 
 function displayCurrentUsedStorage()
@@ -54,9 +56,8 @@ async function getapi(url) {
     
     // Storing data in form of JSON
     var data = await response.json();
-    console.log(data);
     if (response) {
-        //
+        return data;
     }
     //show(data);
 }

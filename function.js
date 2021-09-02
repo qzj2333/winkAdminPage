@@ -29,35 +29,6 @@ function logout()
     window.location.href = "index.html";
 }
 
-function uploadToGoogleSheet()
-{
-    // goto google apps script which uploads data from mongoDB to google sheet
-    window.location.href = "https://script.google.com/macros/s/AKfycbyq9Dym-zBYFiNahjLKXm8LifVqMoA5jBUzbWPDYnM/dev";
-}
-
-function onSuccess()
-{
-    deleteMongoDBData();
-    //window.location.href = "data.html";
-}
-
-function deleteMongoDBData()
-{
-    console.log("going to delete!");
-    fetch('https://winkcrushes.com/wink/admin/deleteUploadData', {method: 'POST'})
-    .then(function(response) {
-      if(response.ok) {
-        console.log(response);
-        console.log('Data is deleted!');
-        return;
-      }
-      throw new Error('Request failed.');
-    })
-    .catch(function(error) {
-      console.log(error);
-    });  
-}
-
 function getDailyActiveUsers()
 {
     var chart = document.createElement("iframe");

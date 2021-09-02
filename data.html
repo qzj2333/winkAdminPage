@@ -25,7 +25,7 @@
             <h1>Data Display</h1>
             <div id="canvas"></div>
             <div id="btnList">
-              <a href="https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing">Go To Data CSV Sheet</a>
+              <button id="dataCSV" class="funcBtn">Go To Data CSV Sheet</button>
               <button id="DAU" class="funcBtn">Get Daily Active Users</button>
               <button id="WAU" class="funcBtn">Get Weekly Active Users</button>
               <button id="MAU" class="funcBtn">Get Monthly Active Users</button>
@@ -35,6 +35,7 @@
         
         <script>
           document.getElementById("logout").addEventListener("click", logout, false);
+          document.getElementById("dataCSV").addEventListener("click", goToCSV, false);
           document.getElementById("DAU").addEventListener("click", getDailyActiveUsers, false);
           document.getElementById("WAU").addEventListener("click", getWeeklyActiveUsers, false);
           document.getElementById("MAU").addEventListener("click", getMonthlyActiveUsers, false);

@@ -29,6 +29,11 @@ function logout()
     window.location.href = "index.html";
 }
 
+function goToCSV()
+{
+    window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
+}
+
 function getDailyActiveUsers()
 {
     var chart = document.createElement("iframe");

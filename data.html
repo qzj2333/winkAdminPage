@@ -24,6 +24,10 @@
         <div id="main">
             <br /><br /><br />
             <h1>Data Display</h1>
+            <div id="dateTime">
+              <h3 id="currentDate">Current Date: </h3>
+              <h3 id="currentTime">Current Time: </h3>
+            </div>
             <div id="canvas"><iframe id="chart"></iframe></div>
             <div id="btnList">
               <button id="dataCSV" class="funcBtn">Go To Data CSV Sheet</button>
@@ -35,6 +39,7 @@
  
         
         <script>
+          document.addEventListener("DOMContentLoaded", displayCurrentDateTime);
           document.getElementById("logout").addEventListener("click", logout, false);
           document.getElementById("dataCSV").addEventListener("click", goToCSV, false);
           document.getElementById("DAU").addEventListener("click", getDailyActiveUsers, false);

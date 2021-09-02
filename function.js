@@ -39,6 +39,7 @@ function displayCurrentDateTime()
 function displayCurrentUserCount()
 {
     var result = getapi("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    console.log(result);
     console.log(result.numberLong);
     document.getElementById("currUserCount").innerHTML = "Current Users: " + result.numberLong;
 }

@@ -38,15 +38,22 @@ function displayCurrentDateTime()
 
 function displayCurrentUserCount()
 {
-    var result = getapi("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
-    console.log(result);
-    console.log(result.numberLong);
-    document.getElementById("currUserCount").innerHTML = "Current Users: " + result.numberLong;
+    // Storing response
+    const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    
+    // Storing data in form of JSON
+    var data = await response.json();
+    if (response) 
+    {
+        console.log(result);
+        console.log(result.numberLong);
+        document.getElementById("currUserCount").innerHTML = "Current Users: " + response.numberLong;
+    } 
 }
 
 function displayCurrentUsedStorage()
 {
-
+    
 }
 
 async function getapi(url) {

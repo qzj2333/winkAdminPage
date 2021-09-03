@@ -36,7 +36,7 @@ function displayCurrentDateTime()
     document.getElementById("currentDate").innerHTML = date;
 }
 
-function displayCurrentUserCount()
+async function displayCurrentUserCount()
 {
     // Storing response
     const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
@@ -53,21 +53,21 @@ function displayCurrentUserCount()
 
 function displayCurrentUsedStorage()
 {
-    
+
 }
 
-async function getapi(url) {
+// async function getapi(url) {
     
-    // Storing response
-    const response = await fetch(url);
+//     // Storing response
+//     const response = await fetch(url);
     
-    // Storing data in form of JSON
-    var data = await response.json();
-    if (response) {
-        return data;
-    }
-    //show(data);
-}
+//     // Storing data in form of JSON
+//     var data = await response.json();
+//     if (response) {
+//         return data;
+//     }
+//     //show(data);
+// }
 
 function goToCSV()
 {

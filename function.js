@@ -45,9 +45,9 @@ async function displayCurrentUserCount()
     var data = await response.json();
     if (response) 
     {
-        console.log(result);
-        console.log(result.numberLong);
-        document.getElementById("currUserCount").innerHTML = "Current Users: " + response.numberLong;
+        console.log(data);
+        console.log(data.numberLong);
+        document.getElementById("currUserCount").innerHTML = "Current Users: " + data.numberLong;
     } 
 }
 

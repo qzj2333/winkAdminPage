@@ -1,5 +1,8 @@
 let adminUsername = "admin";
 let adminPassword = "admin";
+const { MongoClient } = require("mongodb");
+const uri = "mongodb+srv://happynicolewang@hotmail.com:19960324a@wink.lo4nn.mongodb.net/Wink?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 function showSignInBox()
 {
@@ -49,27 +52,30 @@ async function displayCurrentUserCount()
     } 
 }
 
-function displayCurrentUsedStorage()
+async function displayCurrentUsedStorage()
+{
+    console.log("userStorage!");
+    try
+    {
+        await client.connect();
+        await client.db("AnalysisData").command({ ping: 1 });
+    } 
+    finally 
+    {
+        // Ensures that the client will close when you finish/error
+        await client.close();
+    }
+}
+
+function displayLastTimeGetData()
 {
 
 }
 
-// async function getapi(url) {
-    
-//     // Storing response
-//     const response = await fetch(url);
-    
-//     // Storing data in form of JSON
-//     var data = await response.json();
-//     if (response) {
-//         return data;
-//     }
-//     //show(data);
-// }
-
 function goToCSV()
 {
     window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
+    setcookie("CookieName", "CookieValue", 2147483647);
 }
 
 function getDailyActiveUsers()

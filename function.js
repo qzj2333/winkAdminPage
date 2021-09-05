@@ -1,8 +1,5 @@
 let adminUsername = "admin";
 let adminPassword = "admin";
-const { MongoClient } = require("mongodb");
-const uri = "mongodb+srv://happynicolewang@hotmail.com:19960324a@wink.lo4nn.mongodb.net/Wink?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 function showSignInBox()
 {
@@ -54,16 +51,14 @@ async function displayCurrentUserCount()
 
 async function displayCurrentUsedStorage()
 {
-    console.log("userStorage!");
-    try
+    console.log("displayCurrentUsedStorage");
+    const http = new XMLHttpRequest();
+    const url='https://winkcrushes.com/wink/allConvos';
+    http.open("GET", url);
+    http.send();
+    http.onreadystatechange=(e)=>
     {
-        await client.connect();
-        await client.db("AnalysisData").command({ ping: 1 });
-    } 
-    finally 
-    {
-        // Ensures that the client will close when you finish/error
-        await client.close();
+        console.log(Http.responseText)
     }
 }
 

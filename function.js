@@ -58,7 +58,7 @@ async function displayCurrentUsedStorage()
     http.send();
     http.onreadystatechange=(e)=>
     {
-        console.log(Http.responseText)
+        console.log(http.responseText)
     }
 }
 

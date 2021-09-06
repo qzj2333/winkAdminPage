@@ -1,15 +1,15 @@
 <?php
-$client = new MongoDB\Client(
+//$client = new MongoDB\Client(
     'mongodb+srv://admin:admin@wink.lo4nn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 $ok = false;
 $message = array();
-$db = $client->AnalysisData;
-$collection = $db->classification;
+//$db = $client->AnalysisData;
+//$collection = $db->classification;
 
-if($client->connected)
-{
-    $ok = true;
-}
+// if($client->connected)
+// {
+//     $ok = true;
+// }
 $message[] = "hi";
 //$username = htmlentities($_POST['username']);
 //$password = htmlentities($_POST['password']);

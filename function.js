@@ -62,7 +62,7 @@ async function displayCurrentUsedStorage()
       }
       catch(e)
       {
-        console.error('Could not parse JSON!');
+        console.error(e);
       }
       
       if(response.ok)   // sign in successfully
@@ -72,7 +72,6 @@ async function displayCurrentUsedStorage()
       else
       {
           console.log(request);
-          console.log(response);
       }
 
     }  

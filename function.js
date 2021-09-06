@@ -52,14 +52,33 @@ async function displayCurrentUserCount()
 async function displayCurrentUsedStorage()
 {
     console.log("displayCurrentUsedStorage");
-    const http = new XMLHttpRequest();
-    const url='https://winkcrushes.com/wink/allConvos';
-    http.open("GET", url);
-    http.send();
     http.onreadystatechange=(e)=>
     {
         console.log(http.responseText)
     }
+
+    const request = new XMLHttpRequest();
+    request.onload = () =>
+    {
+      try
+      {
+        response = JSON.parse(request.responseText);
+      }
+      catch(e)
+      {
+        console.error('Could not parse JSON!');
+      }
+      
+      if(response.ok)   // sign in successfully
+      {
+          console.log(response.responseText);
+      }
+
+    }  
+    //const requestData = `username=&password=`;
+    request.open('GET', 'https://winkcrushes.com/wink/allConvos');
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    //request.send(requestData);
 }
 
 function displayLastTimeGetData()

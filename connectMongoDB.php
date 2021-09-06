@@ -2,7 +2,7 @@
 $client = new MongoDB\Client(
     'mongodb+srv://admin:admin@wink.lo4nn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority');
 $ok = false;
-
+$message = array();
 $db = $client->AnalysisData;
 $collection = $db->classification;
 

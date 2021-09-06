@@ -79,6 +79,7 @@ async function displayCurrentUsedStorage()
     request.open('GET', 'https://winkcrushes.com/wink/allConvos');
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     //request.send(requestData);
+    request.send();
 }
 
 function displayLastTimeGetData()

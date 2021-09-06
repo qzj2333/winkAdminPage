@@ -53,7 +53,7 @@ async function displayCurrentUsedStorage()
 {
     console.log("displayCurrentUsedStorage");
     const request = new XMLHttpRequest();
-    request.onload = () =>
+    request.onreadystatechange = () =>
     {
         console.log(request);
       try

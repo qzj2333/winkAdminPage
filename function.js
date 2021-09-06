@@ -59,21 +59,19 @@ async function displayCurrentUsedStorage()
       try
       {
         response = JSON.parse(request.responseText);
+        if(response.ok)   // sign in successfully
+        {
+            console.log(request.responseText);
+        }
+        else
+        {
+            console.log(request);
+        }
       }
       catch(e)
       {
         console.log(e);
       }
-      
-      if(response.ok)   // sign in successfully
-      {
-          console.log(request.responseText);
-      }
-      else
-      {
-          console.log(request);
-      }
-
     }  
     //const requestData = `username=&password=`;
     request.open('GET', 'connectMongoDB.php');

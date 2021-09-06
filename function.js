@@ -52,11 +52,6 @@ async function displayCurrentUserCount()
 async function displayCurrentUsedStorage()
 {
     console.log("displayCurrentUsedStorage");
-    http.onreadystatechange=(e)=>
-    {
-        console.log(http.responseText)
-    }
-
     const request = new XMLHttpRequest();
     request.onload = () =>
     {

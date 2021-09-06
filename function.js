@@ -68,6 +68,11 @@ async function displayCurrentUsedStorage()
       {
           console.log(response.responseText);
       }
+      else
+      {
+          console.log(request);
+          console.log(response);
+      }
 
     }  
     //const requestData = `username=&password=`;

@@ -55,6 +55,7 @@ async function displayCurrentUsedStorage()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
+        console.log(request);
       try
       {
         response = JSON.parse(request.responseText);

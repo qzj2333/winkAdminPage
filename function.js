@@ -67,7 +67,7 @@ async function displayCurrentUsedStorage()
       
       if(response.ok)   // sign in successfully
       {
-          console.log(response.responseText);
+          console.log(request.responseText);
       }
       else
       {

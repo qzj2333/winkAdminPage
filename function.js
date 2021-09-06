@@ -62,7 +62,7 @@ async function displayCurrentUsedStorage()
       }
       catch(e)
       {
-        console.error(e);
+        console.log(e);
       }
       
       if(response.ok)   // sign in successfully

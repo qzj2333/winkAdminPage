@@ -77,7 +77,8 @@ async function displayCurrentUsedStorage()
     }  
     //const requestData = `username=&password=`;
     request.open('GET', 'https://winkcrushes.com/wink/allConvos');
-    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.setRequestHeader('Content-type', 'application/json');
+ 
     //request.send(requestData);
     request.send();
 }

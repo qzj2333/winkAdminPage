@@ -31,7 +31,12 @@
               <h3 id="currUsedStorage"></h3>
               <h3 id="lastTimeGetData"></h3>
             </div>
-            <div id="canvas"><iframe id="chart"></iframe></div>
+            <div id="canvas">
+              <iframe id="activeUser"></iframe>
+              <iframe id="sessionFrequency"></iframe>
+              <iframe id="sessionDuration"></iframe>
+              <iframe id="chart"></iframe>
+            </div>
             <div id="btnList">
               <button id="dataCSV" class="funcBtn">Go To Data CSV Sheet</button>
               <button id="DAU" class="funcBtn">Get Daily Active Users</button>
@@ -45,6 +50,9 @@
           document.addEventListener("DOMContentLoaded", displayCurrentDateTime);
           document.addEventListener("DOMContentLoaded", displayCurrentUserCount);
           document.addEventListener("DOMContentLoaded", displayCurrentUsedStorage);
+          document.addEventListener("DOMContentLoaded", displayActiveUserChart);
+          document.addEventListener("DOMContentLoaded", displaySessionFrequencyChart);
+          document.addEventListener("DOMContentLoaded", displaySessionDurationChart);
           document.getElementById("logout").addEventListener("click", logout, false);
           document.getElementById("dataCSV").addEventListener("click", goToCSV, false);
           document.getElementById("DAU").addEventListener("click", getDailyActiveUsers, false);

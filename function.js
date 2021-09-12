@@ -92,15 +92,23 @@ function goToCSV()
     setcookie("CookieName", "CookieValue", 2147483647);
 }
 
-function getDailyActiveUsers()
+function displayActiveUserChart()
 {
-    var chart = document.getElementById("chart");
-    chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=2be3bdf5-f7c2-4a36-8c66-d500b404eeff&autoRefresh=300&theme=light";
+    var chart = document.getElementById("activeUser");
+    chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=2be3bdf5-f7c2-4a36-8c66-d500b404eeff&theme=light";
 }
 
-function getWeeklyActiveUsers()
+function displaySessionFrequencyChart()
 {
+    var chart = document.getElementById("sessionFrequency");
+    chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=ea7d200c-a2ed-49e5-981b-5c48e004fb7a&theme=light";
+    
+}
 
+function displaySessionDurationChart()
+{
+    var chart = document.getElementById("sessionDuration");
+    chart.src = "https://charts.mongodb.com/charts-wink-konrk/embed/charts?id=faa11296-0032-4d9d-b4f6-bdcc581ff72f&theme=light";
 }
 
 function getMonthlyActiveUsers()

@@ -2,6 +2,7 @@ body, .htmlPage
 {
     height: 100%;
     margin: 0;
+    background-color:#144cff;
 }
 
 h1
@@ -138,13 +139,18 @@ p
     float: right;
 }
 
+#main
+{
+    background-color: white;
+}
+
 /* data page */
 #canvas
 {
     text-align: center;
 }
 
-#chart, #activeUser, #sessionFrequency, #sessionDuration
+.iframe
 {
     background: "#FFFFFF";
     border: "none";

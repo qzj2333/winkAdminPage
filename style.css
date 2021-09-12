@@ -145,6 +145,16 @@ p
     text-align: center;
 }
 
+#chart, #activeUser, #sessionFrequency, #sessionDuration
+{
+    background: "#FFFFFF";
+    border: "none";
+    border-radius: "2px";
+    box-shadow: "0 2px 10px 0 rgba(70, 76, 79, .2)";
+    width: 640;
+    height:480;
+}
+
 #flashStats
 {
     text-align: center;

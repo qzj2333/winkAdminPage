@@ -164,14 +164,15 @@ p
 }
 
 /* bug page */
-body {
+/*body {
     background-color: #fff
-}
+}*/
 
 .container {
     margin-top: 200px;
-    background-color: #eef2f5;
-    width: 400px
+    padding-top: 100px;
+    background-color:red;/* #eef2f5;*/
+    width: 400px;
 }
 
 .addtxt {

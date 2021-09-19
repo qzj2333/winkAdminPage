@@ -167,6 +167,11 @@ p
 /*body {
     background-color: #fff
 }*/
+form
+{
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .container {
     /* margin not work */

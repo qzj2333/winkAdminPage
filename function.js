@@ -29,6 +29,7 @@ function logout()
     window.location.href = "index.html";
 }
 
+/* data display */
 function displayCurrentDateTime()
 {
     var today = new Date();
@@ -117,4 +118,13 @@ function getMonthlyActiveUsers()
 
 }
 
+/* bug page */
+function addComment()
+{
+    var d1 = document.createElement("div");
+    var d2 = document.createElement("div");
+    var d3 = document.createElement("div");
+    var d4 = document.createElement("div");
+    var img = document.createElement("img");
+}
 

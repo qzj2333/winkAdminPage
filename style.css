@@ -169,9 +169,10 @@ p
 }*/
 
 .container {
-    margin-top: 500px;
-    padding-top: 100px;
-    background-color:blue;/* #eef2f5;*/
+    /* margin not work */
+    padding-top: 50px;
+    padding-bottom: 10px;
+    background-color: #eef2f5;
     width: 400px;
 }
 

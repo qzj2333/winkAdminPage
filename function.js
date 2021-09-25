@@ -156,6 +156,8 @@ function addBug(form)
     sp4.class = "thumbup";
     var li = document.createElement("i");
     li.className = "fa fa-thumbs-o-up";
+    var sp5 = document.createElement("span");
+    sp5.className = "text4";
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);
@@ -166,5 +168,6 @@ function addBug(form)
     d5.appendChild(sp3);
     d5.appendChild(sp4);
     d5.append(li);
+    d5.append(sp5);
 }
 

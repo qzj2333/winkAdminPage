@@ -132,9 +132,10 @@ function loadBugs()
 }
 
 /* bug page */
-function addBug(detail)
+function addBug()
 {
-    console.log(detail);
+    console.log(document.getElementById("title").value);
+    console.log(document.getElementById("detail").value);
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";
     var d2 = document.createElement("div");

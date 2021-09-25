@@ -26,21 +26,19 @@
 
         <div class="container justify-content-center mt-5 border-left border-right">
           <!--Submit Bug-->
-          <form action="javascript:addBug(detail.value)">
             <h2>Submit a New Bug</h2>
             <!-- Title input -->
             <div class="form-outline mb-4">
-              <input type="text" placeholder="title" id="title" name="title" class="form-control" />
+              <input type="text" placeholder="title" id="title" class="form-control" />
             </div>
           
             <!-- Details input -->
             <div class="form-outline mb-4">
-              <textarea placeholder="Details" class="form-control" id="detail" name="detail" rows="5"></textarea>
+              <textarea placeholder="Details" class="form-control" id="detail" rows="5"></textarea>
             </div>
             <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
-          </form>
-
+            <button type="submit" class="btn btn-primary btn-block mb-4" id="submitBug">Submit</button>
+          </div>
           <!--<div class="d-flex justify-content-center py-2">
               <div class="second py-2 px-2"> <span class="text1">Type your note, and hit enter to add it</span>
                   <div class="d-flex justify-content-between py-1 pt-2">
@@ -75,10 +73,11 @@
                   </div>
               </div>
           </div>-->
-      </div>
+      
 
         <script>
           document.addEventListener("DOMContentLoaded", loadBugs);
+          document.getElementById("submitBug").addEventListener("click", addBug);
           document.getElementById("logout").addEventListener("click", logout, false);
         </script>
     </body>

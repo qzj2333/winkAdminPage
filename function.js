@@ -132,15 +132,16 @@ function loadBugs()
 }
 
 /* bug page */
-function addBug(form)
+function addBug(detail)
 {
+    console.log(detail);
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";
     var d2 = document.createElement("div");
     d2.className = "second py-2 px-2";
     var sp1 = document.createElement("span");
     sp1.className = "text1";
-    sp1.innerHTML = form.detail;
+    sp1.innerHTML = detail;
     var d3 = document.createElement("div");
     d3.className = "d-flex justify-content-between py-1 pt-2";
     var d4 = document.createElement("div");

@@ -118,13 +118,53 @@ function getMonthlyActiveUsers()
 
 }
 
+function loadBugs()
+{
+    // // Storing response
+    // const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    
+    // // Storing data in form of JSON
+    // var data = await response.json();
+    // if (response) 
+    // {
+    //     document.getElementById("currUserCount").innerHTML = "Current Users: " + data.$numberLong;
+    // } 
+}
+
 /* bug page */
-function addComment()
+function addBug(form)
 {
     var d1 = document.createElement("div");
+    d1.className = "d-flex justify-content-center py-2";
     var d2 = document.createElement("div");
+    d2.className = "second py-2 px-2";
+    var sp1 = document.createElement("span");
+    sp1.className = "text1";
+    sp1.innerHTML = form.detail;
     var d3 = document.createElement("div");
+    d3.className = "d-flex justify-content-between py-1 pt-2";
     var d4 = document.createElement("div");
     var img = document.createElement("img");
+    img.width = 18;
+    var sp2 = document.createElement("span");
+    sp2.className = "text2";
+    var sp3 = document.createElement("span");
+    sp3.className = "text3";
+    sp3.innerHTML = "Upvote?";
+    var d5 = document.createElement("div");
+    var sp4 = document.createElement("span");
+    sp4.class = "thumbup";
+    var li = document.createElement("i");
+    li.className = "fa fa-thumbs-o-up";
+    d1.appendChild(d2);
+    d2.appendChild(sp1);
+    d2.appendChild(d3);
+    d3.appendChild(d4);
+    d4.appendChild(img);
+    d4.appendChild(sp2);
+    d3.appendChild(d5);
+    d5.appendChild(sp3);
+    d5.appendChild(sp4);
+    d5.append(li);
 }
 

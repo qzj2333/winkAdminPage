@@ -125,21 +125,13 @@ async function loadBugs()
     
     // Storing data in form of JSON
     var data = await response.json();
-    
+    var currData;
     if (response) 
     {
-        console.log(data);
-        console.log(data.length);
-        for(d in data)
-        {
-            console.log(d);
-            displayOneBugPost(d.username, d.title, d.detail);
-        }
-        console.log("---------");
         for(var i = 0; i < data.length; i++)
         {
-            console.log(data[i]);
-            console.log(data[i].username);
+            currData = data[i];
+            displayOneBugPost(currData.username, currData.title, currData.detail);
         }
     } 
 }

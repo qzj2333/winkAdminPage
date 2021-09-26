@@ -228,7 +228,7 @@ function updateRate(id)
 
         console.log("updateRate:"+id);
         // reload website
-        
+        location.reload();
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

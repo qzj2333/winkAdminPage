@@ -207,7 +207,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     // d5.append(sp5);
     document.body.appendChild(d1);
     //d1.addEventListener("click", displayBugDetail(id, username, title, detail));
-    btn.addEventListener("click", updateRate(id,rate+1));
+    btn.addEventListener("click", updateRate(id));
 }
 
 function displayBugDetail(id, username, title, detail)
@@ -215,7 +215,7 @@ function displayBugDetail(id, username, title, detail)
     console.log("displayBugDetail");
 }
 
-function updateRate(id, newRate)
+function updateRate(id)
 {
     console.log("update vote");
     // add to database

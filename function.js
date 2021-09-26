@@ -139,9 +139,13 @@ async function addBug()
 
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    var data = {username: "admin",
-                title: document.getElementById("title").value,
-                detail: document.getElementById("detail").value};
+    var data = new FormData();
+    data.append('username', 'admin');
+    data.append('title', document.getElementById("title").value);
+    data.append('detail', document.getElementById("detail").value);
+    //var data = {username: "admin",
+                // title: document.getElementById("title").value,
+                // detail: document.getElementById("detail").value};
 
     await fetch(url, {
     method: 'POST',

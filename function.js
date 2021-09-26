@@ -138,7 +138,7 @@ async function loadBugs()
 }
 
 /* bug page */
-async function addBug()
+function addBug()
 {
     var title = document.getElementById("title").value;
     var detail = document.getElementById("detail").value;
@@ -148,8 +148,7 @@ async function addBug()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        
-        var id = await response.json();
+        var id = request.json();
         console.log("addBug:"+id);
         // update website
         displayOneBugPost(id, document.cookie, title, detail)

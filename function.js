@@ -120,18 +120,18 @@ function getMonthlyActiveUsers()
 
 function loadBugs()
 {
-    const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs");
     
     // Storing data in form of JSON
     var data = await response.json();
     if (response) 
     {
-        document.getElementById("currUserCount").innerHTML = "Current Users: " + data.$numberLong;
+        console.log(data);
     } 
 }
 
 /* bug page */
-async function addBug()
+function addBug()
 {
     var title = document.getElementById("title").value;
     var detail = document.getElementById("detail").value;

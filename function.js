@@ -230,5 +230,5 @@ function updateRate(id)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    request.send(data);
+    request.send(id);
 }

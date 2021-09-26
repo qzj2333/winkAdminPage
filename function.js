@@ -147,13 +147,17 @@ async function addBug()
                 // title: document.getElementById("title").value,
                 // detail: document.getElementById("detail").value};
 
-    await fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: new Headers({
-        'Content-Type': 'application/json'
-    })
-    }).then(res => res.json())
+    // await fetch(url, {
+    // method: 'POST',
+    // body: JSON.stringify(data),
+    // headers: new Headers({
+    //     'Content-Type': 'application/json'
+    // })
+    fetch(url, {
+  method: 'POST',
+  body: formData
+})
+    .then(res => res.json())
     .catch(error => console.error('Error:', error))
     .then(response => 
         {

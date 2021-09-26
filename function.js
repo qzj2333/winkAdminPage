@@ -132,7 +132,7 @@ async function loadBugs()
         {
             currData = data[i];
             console.log("loadBug: "+currData._id);
-            displayOneBugPost(currData.username, currData.title, currData.detail);
+            displayOneBugPost(currData.username, currData.title, currData.detail, currData.rate);
         }
     } 
 }
@@ -152,14 +152,14 @@ function addBug()
 
         console.log("addBug:"+id+"---"+id.toString());
         // update website
-        displayOneBugPost(id, document.cookie, title, detail)
+        displayOneBugPost(id, document.cookie, title, detail, 0)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
 }
 
-function displayOneBugPost(id, username, title, detail)
+function displayOneBugPost(id, username, title, detail, rate)
 {
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";
@@ -175,10 +175,11 @@ function displayOneBugPost(id, username, title, detail)
     img.width = 18;
     var sp2 = document.createElement("span");
     sp2.className = "text2";
+    sp2.innerHTML = username;
     var d5 = document.createElement("div");
     var sp3 = document.createElement("span");
     sp3.className = "text3";
-    sp3.innerHTML = "Upvote?";
+    sp3.innerHTML = rate;
     var sp4 = document.createElement("span");
     sp4.className = "glyphicon glyphicon-thumbs-up";
     // sp4.class = "thumbup";
@@ -191,7 +192,7 @@ function displayOneBugPost(id, username, title, detail)
     btn.className = "btn btn-default btn-sm";
     sp4.className = "glyphicon glyphicon-thumbs-up";
     btn.appendChild(sp4);
-    btn.innerHTML = "Like";
+    //btn.innerHTML = "Like";
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);
@@ -200,13 +201,13 @@ function displayOneBugPost(id, username, title, detail)
     d4.appendChild(sp2);
     d3.appendChild(d5);
     d5.appendChild(sp3);
-    d5.append(btn);
+    d5.appendChild(btn);
     //d5.appendChild(sp4);
     // d5.append(li);
     // d5.append(sp5);
     document.body.appendChild(d1);
     d1.addEventListener("click", displayBugDetail(id, username, title, detail));
-    btn.addEventListener("click", updateRate);
+    btn.addEventListener("click", updateRate(id,rate+1));
 }
 
 function displayBugDetail(username, title, detail)
@@ -216,7 +217,22 @@ function displayBugDetail(username, title, detail)
     console.log(detail);
 }
 
-function updateRate()
+function updateRate(id, newRate)
 {
     console.log("update vote");
+    // add to database
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
+    var data = 'id='+id+"&rate="+newRate;
+    const request = new XMLHttpRequest();
+    request.onload = () =>
+    {
+        var id = request.responseText;
+
+        console.log("updateRate:"+id+"---"+id.toString());
+        // reload website
+        
+    }  
+    request.open('PUT', url);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send(data);
 }

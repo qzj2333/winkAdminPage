@@ -221,8 +221,8 @@ function updateRate(id, newRate)
 {
     console.log("update vote");
     // add to database
-    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    var data = 'id='+id+"&rate="+newRate;
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/updateRate';
+    var data = 'id='+id;
     const request = new XMLHttpRequest();
     request.onload = () =>
     {

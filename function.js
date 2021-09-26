@@ -20,6 +20,7 @@ function signIn()
     let password = document.getElementById('passwordSignIn').value
     if(username == adminUsername && password == adminPassword)
     {
+        document.cookie = username;
         window.location.href = "data.html";
     }
 }
@@ -148,7 +149,7 @@ function addBug()
     {
         console.log("addBug");
         // update website
-        displayOneBugPost("admin", title, detail)
+        displayOneBugPost(document.cookie, title, detail)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

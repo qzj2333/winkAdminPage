@@ -118,7 +118,7 @@ function getMonthlyActiveUsers()
 
 }
 
-function loadBugs()
+async function loadBugs()
 {
     console.log("loadBugs");
     const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs");

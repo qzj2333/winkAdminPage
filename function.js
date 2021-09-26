@@ -131,7 +131,7 @@ async function loadBugs()
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
-            console.log("loadBug: "+currData._id);
+            console.log("loadBug: "+currData.id);
             displayOneBugPost(currData.username, currData.title, currData.detail, currData.rate);
         }
     } 
@@ -212,9 +212,7 @@ function displayOneBugPost(id, username, title, detail, rate)
 
 function displayBugDetail(username, title, detail)
 {
-    console.log(username);
-    console.log(title);
-    console.log(detail);
+    console.log("displayBugDetail");
 }
 
 function updateRate(id, newRate)
@@ -232,7 +230,7 @@ function updateRate(id, newRate)
         // reload website
         
     }  
-    request.open('PUT', url);
+    request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
 }

@@ -131,8 +131,7 @@ async function loadBugs()
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
-            console.log("loadBug: "+currData);
-            console.log(currData.id);
+            console.log("loadBug: "+currData._id);
             displayOneBugPost(currData.username, currData.title, currData.detail);
         }
     } 

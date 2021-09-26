@@ -125,6 +125,7 @@ async function loadBugs()
     
     // Storing data in form of JSON
     var data = await response.json();
+    console.log(data);
     var currData;
     if (response) 
     {

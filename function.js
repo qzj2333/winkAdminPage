@@ -134,79 +134,58 @@ function loadBugs()
 /* bug page */
 async function addBug()
 {
-    console.log(document.getElementById("title").value);
-    console.log(document.getElementById("detail").value);
-
+    var title = document.getElementById("title").value;
+    var detail = document.getElementById("detail").value;
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    // var data = {username: "admin",
-    //             title: document.getElementById("title").value,
-    //             detail: document.getElementById("detail").value};
-    var data = 'username=admin&title='+document.getElementById("title").value+"detail="+document.getElementById("detail").value;
-    // await fetch(url, {
-    // method: 'POST',
-    // body: JSON.stringify(data),
-    // headers: new Headers({
-    //     'Content-Type': 'application/json'
-    // })
+    var data = 'username=admin&title='+title+"&detail="+detail;
     const request = new XMLHttpRequest();
     request.onreadystatechange = () =>
     {
-        console.log(request);
+        // update website
+        displayOneBugPost("admin", title, detail)
     }  
-    //const requestData = `username=&password=`;
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
- 
     request.send(data);
-
-    /*fetch(url, {
-  method: 'POST',
-  body: formData
-})
-    .then(res => res.json())
-    .catch(error => console.error('Error:', error))
-    .then(response => 
-        {
-            console.log('Success:', response);
-            // update website
-            var d1 = document.createElement("div");
-            d1.className = "d-flex justify-content-center py-2";
-            var d2 = document.createElement("div");
-            d2.className = "second py-2 px-2";
-            var sp1 = document.createElement("span");
-            sp1.className = "text1";
-            sp1.innerHTML = document.getElementById("detail").value;
-            var d3 = document.createElement("div");
-            d3.className = "d-flex justify-content-between py-1 pt-2";
-            var d4 = document.createElement("div");
-            var img = document.createElement("img");
-            img.width = 18;
-            var sp2 = document.createElement("span");
-            sp2.className = "text2";
-            var sp3 = document.createElement("span");
-            sp3.className = "text3";
-            sp3.innerHTML = "Upvote?";
-            var d5 = document.createElement("div");
-            var sp4 = document.createElement("span");
-            sp4.class = "thumbup";
-            var li = document.createElement("i");
-            li.className = "fa fa-thumbs-o-up";
-            var sp5 = document.createElement("span");
-            sp5.className = "text4";
-            d1.appendChild(d2);
-            d2.appendChild(sp1);
-            d2.appendChild(d3);
-            d3.appendChild(d4);
-            d4.appendChild(img);
-            d4.appendChild(sp2);
-            d3.appendChild(d5);
-            d5.appendChild(sp3);
-            d5.appendChild(sp4);
-            d5.append(li);
-            d5.append(sp5);
-        });*/
-
-    
 }
 
+function displayOneBugPost(username, title, detail)
+{
+    var d1 = document.createElement("div");
+    d1.className = "d-flex justify-content-center py-2";
+    var d2 = document.createElement("div");
+    d2.className = "second py-2 px-2";
+    var sp1 = document.createElement("span");
+    sp1.className = "text1";
+    sp1.innerHTML = detail;
+    var d3 = document.createElement("div");
+    d3.className = "d-flex justify-content-between py-1 pt-2";
+    var d4 = document.createElement("div");
+    var img = document.createElement("img");
+    img.width = 18;
+    var sp2 = document.createElement("span");
+    sp2.className = "text2";
+    var sp3 = document.createElement("span");
+    sp3.className = "text3";
+    sp3.innerHTML = "Upvote?";
+    var d5 = document.createElement("div");
+    var sp4 = document.createElement("span");
+    sp4.class = "thumbup";
+    var li = document.createElement("i");
+    li.className = "fa fa-thumbs-o-up";
+    var sp5 = document.createElement("span");
+    sp5.className = "text4";
+    d1.appendChild(d2);
+    d2.appendChild(sp1);
+    d2.appendChild(d3);
+    d3.appendChild(d4);
+    d4.appendChild(img);
+    d4.appendChild(sp2);
+    d3.appendChild(d5);
+    d5.appendChild(sp3);
+    d5.appendChild(sp4);
+    d5.append(li);
+    d5.append(sp5);
+    document.body.appendChild(d1);
+}

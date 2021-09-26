@@ -147,7 +147,7 @@ function addBug()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        console.log("addBug");
+        console.log("cookie:" + document.cookie);
         // update website
         displayOneBugPost(document.cookie, title, detail)
     }  

@@ -228,7 +228,7 @@ function updateRate(id)
     {
         var id = request.responseText;
 
-        console.log("updateRate:"+id+"---"+id.toString());
+        console.log("updateRate:"+id);
         // reload website
         
     }  

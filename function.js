@@ -132,7 +132,7 @@ async function loadBugs()
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
-            displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate);
+            displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
         }
     } 
 }
@@ -149,8 +149,6 @@ function addBug()
     request.onload = () =>
     {
         var id = request.responseText;
-
-        console.log("addBug:"+id+"---"+id.toString());
         // update website
         displayOneBugPost(id, document.cookie, title, detail, 0)
     }  

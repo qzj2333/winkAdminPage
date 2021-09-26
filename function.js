@@ -130,8 +130,6 @@ async function loadBugs()
     {
         console.log(data);
         console.log(data.length);
-        var dataa = JSON.parse(response.responseText);
-        console.log("dataa: " + dataa);
         for(d in data)
         {
             console.log(d);

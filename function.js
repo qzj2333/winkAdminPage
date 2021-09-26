@@ -120,15 +120,14 @@ function getMonthlyActiveUsers()
 
 function loadBugs()
 {
-    // // Storing response
-    // const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
+    const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getUserCount");
     
-    // // Storing data in form of JSON
-    // var data = await response.json();
-    // if (response) 
-    // {
-    //     document.getElementById("currUserCount").innerHTML = "Current Users: " + data.$numberLong;
-    // } 
+    // Storing data in form of JSON
+    var data = await response.json();
+    if (response) 
+    {
+        document.getElementById("currUserCount").innerHTML = "Current Users: " + data.$numberLong;
+    } 
 }
 
 /* bug page */
@@ -140,7 +139,7 @@ async function addBug()
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
     var data = 'username=admin&title='+title+"&detail="+detail;
     const request = new XMLHttpRequest();
-    request.onreadystatechange = () =>
+    request.onload = () =>
     {
         // update website
         displayOneBugPost("admin", title, detail)

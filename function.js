@@ -128,6 +128,10 @@ async function loadBugs()
     if (response) 
     {
         console.log(data);
+        for(d in data)
+        {
+            displayOneBugPost(d.username, d.title, d.detail);
+        }
     } 
 }
 

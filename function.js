@@ -132,7 +132,7 @@ async function loadBugs()
         {
             currData = data[i];
             console.log("loadBug: "+currData.id);
-            displayOneBugPost(currData.username, currData.title, currData.detail, currData.rate);
+            displayOneBugPost(currData.id, currData.username, currData.title, currData.detail, currData.rate);
         }
     } 
 }
@@ -159,7 +159,7 @@ function addBug()
     request.send(data);
 }
 
-function displayOneBugPost(username, title, detail, rate)
+function displayOneBugPost(id, username, title, detail, rate)
 {
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";

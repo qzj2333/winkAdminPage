@@ -231,7 +231,8 @@ form
 .text4 {
     font-size: 13px;
     font-weight: 500;
-    color: #828386
+    color: #828386;
+    margin-left: 3px;
 }
 
 .text4i {

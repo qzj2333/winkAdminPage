@@ -143,11 +143,10 @@ function addBug()
     var detail = document.getElementById("detail").value;
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    var data = 'username=admin&title='+title+"&detail="+detail;
+    var data = 'username=admin&title='+title+"&detail="+detail+"&rate=0";
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        console.log("cookie:" + document.cookie);
         // update website
         displayOneBugPost(document.cookie, title, detail)
     }  
@@ -172,16 +171,22 @@ function displayOneBugPost(username, title, detail)
     img.width = 18;
     var sp2 = document.createElement("span");
     sp2.className = "text2";
+    var d5 = document.createElement("div");
     var sp3 = document.createElement("span");
     sp3.className = "text3";
     sp3.innerHTML = "Upvote?";
-    var d5 = document.createElement("div");
     var sp4 = document.createElement("span");
-    sp4.class = "thumbup";
-    var li = document.createElement("i");
-    li.className = "fa fa-thumbs-o-up";
-    var sp5 = document.createElement("span");
-    sp5.className = "text4";
+    // sp4.class = "thumbup";
+    // var li = document.createElement("i");
+    // li.className = "fa fa-thumbs-o-up";
+    // var sp5 = document.createElement("span");
+    // sp5.className = "text4";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-default btn-sm";
+    sp4.className = "glyphicon glyphicon-thumbs-up";
+    btn.appendChild(sp4);
+    btn.innerHTML = "Like";
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);
@@ -190,8 +195,9 @@ function displayOneBugPost(username, title, detail)
     d4.appendChild(sp2);
     d3.appendChild(d5);
     d5.appendChild(sp3);
-    d5.appendChild(sp4);
-    d5.append(li);
-    d5.append(sp5);
+    d5.append(btn);
+    //d5.appendChild(sp4);
+    // d5.append(li);
+    // d5.append(sp5);
     document.body.appendChild(d1);
 }

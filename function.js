@@ -131,6 +131,8 @@ async function loadBugs()
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
+            console.log("loadBug: "+currData);
+            console.log(currData.id);
             displayOneBugPost(currData.username, currData.title, currData.detail);
         }
     } 
@@ -147,15 +149,16 @@ function addBug()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
+        console.log("addBug:"+request.responseText);
         // update website
-        displayOneBugPost(document.cookie, title, detail)
+        displayOneBugPost(id, document.cookie, title, detail)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
 }
 
-function displayOneBugPost(username, title, detail)
+function displayOneBugPost(id, username, title, detail)
 {
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";
@@ -201,7 +204,7 @@ function displayOneBugPost(username, title, detail)
     // d5.append(li);
     // d5.append(sp5);
     document.body.appendChild(d1);
-    d1.addEventListener("click", displayBugDetail(username, title, detail));
+    d1.addEventListener("click", displayBugDetail(id, username, title, detail));
     btn.addEventListener("click", updateRate);
 }
 

@@ -148,8 +148,9 @@ function addBug()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        var id = request.json();
-        console.log("addBug:"+id);
+        var id = request.responseText;
+
+        console.log("addBug:"+id+"---"+id.toString());
         // update website
         displayOneBugPost(id, document.cookie, title, detail)
     }  

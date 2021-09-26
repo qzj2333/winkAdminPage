@@ -120,6 +120,7 @@ function getMonthlyActiveUsers()
 
 function loadBugs()
 {
+    console.log("loadBugs");
     const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs");
     
     // Storing data in form of JSON
@@ -141,6 +142,7 @@ function addBug()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
+        console.log("addBug");
         // update website
         displayOneBugPost("admin", title, detail)
     }  

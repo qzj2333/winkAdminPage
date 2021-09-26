@@ -163,7 +163,7 @@ function displayOneBugPost(username, title, detail)
     d2.className = "second py-2 px-2";
     var sp1 = document.createElement("span");
     sp1.className = "text1";
-    sp1.innerHTML = detail;
+    sp1.innerHTML = title;
     var d3 = document.createElement("div");
     d3.className = "d-flex justify-content-between py-1 pt-2";
     var d4 = document.createElement("div");
@@ -201,4 +201,18 @@ function displayOneBugPost(username, title, detail)
     // d5.append(li);
     // d5.append(sp5);
     document.body.appendChild(d1);
+    d1.addEventListener("click", displayBugDetail(username, title, detail));
+    btn.addEventListener("click", updateRate);
+}
+
+function displayBugDetail(username, title, detail)
+{
+    console.log(username);
+    console.log(title);
+    console.log(detail);
+}
+
+function updateRate()
+{
+    console.log("update vote");
 }

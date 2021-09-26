@@ -131,8 +131,8 @@ async function loadBugs()
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
-            console.log("loadBug: "+currData.id);
-            displayOneBugPost(currData.id, currData.username, currData.title, currData.detail, currData.rate);
+            console.log("loadBug: "+currData._id);
+            displayOneBugPost(currData._id, currData.username, currData.title, currData.detail, currData.rate);
         }
     } 
 }

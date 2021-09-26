@@ -176,6 +176,7 @@ function displayOneBugPost(username, title, detail)
     sp3.className = "text3";
     sp3.innerHTML = "Upvote?";
     var sp4 = document.createElement("span");
+    sp4.className = "glyphicon glyphicon-thumbs-up";
     // sp4.class = "thumbup";
     // var li = document.createElement("i");
     // li.className = "fa fa-thumbs-o-up";

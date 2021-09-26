@@ -159,7 +159,7 @@ function addBug()
     request.send(data);
 }
 
-function displayOneBugPost(id, username, title, detail, rate)
+function displayOneBugPost(username, title, detail, rate)
 {
     var d1 = document.createElement("div");
     d1.className = "d-flex justify-content-center py-2";

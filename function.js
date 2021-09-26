@@ -132,7 +132,6 @@ async function loadBugs()
         {
             currData = data[i];
             console.log("loadBug: "+currData._id.toString());
-            console.log("loadBug2: "+currData._id.toHexString());
             displayOneBugPost(currData._id, currData.username, currData.title, currData.detail, currData.rate);
         }
     } 

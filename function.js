@@ -185,14 +185,15 @@ function displayOneBugPost(id, username, title, detail, rate)
     // sp4.class = "thumbup";
     // var li = document.createElement("i");
     // li.className = "fa fa-thumbs-o-up";
-    // var sp5 = document.createElement("span");
-    // sp5.className = "text4";
+    var sp5 = document.createElement("span");
+    sp5.className = "text4";
     var btn = document.createElement("button");
     btn.type = "button";
     btn.className = "btn btn-default btn-sm";
     sp4.className = "glyphicon glyphicon-thumbs-up";
     btn.appendChild(sp4);
-    //btn.innerHTML = "Like";
+    sp5.innerHTML = "Like";
+    btn.appendChild(sp5);
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);

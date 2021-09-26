@@ -139,21 +139,28 @@ async function addBug()
 
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    var data = new FormData();
-    data.append('username', 'admin');
-    data.append('title', document.getElementById("title").value);
-    data.append('detail', document.getElementById("detail").value);
-    //var data = {username: "admin",
-                // title: document.getElementById("title").value,
-                // detail: document.getElementById("detail").value};
-
+    // var data = {username: "admin",
+    //             title: document.getElementById("title").value,
+    //             detail: document.getElementById("detail").value};
+    var data = 'username=admin&title='+document.getElementById("title").value+"detail="+document.getElementById("detail").value;
     // await fetch(url, {
     // method: 'POST',
     // body: JSON.stringify(data),
     // headers: new Headers({
     //     'Content-Type': 'application/json'
     // })
-    fetch(url, {
+    const request = new XMLHttpRequest();
+    request.onreadystatechange = () =>
+    {
+        console.log(request);
+    }  
+    //const requestData = `username=&password=`;
+    request.open('POST', url);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+ 
+    request.send(data);
+
+    /*fetch(url, {
   method: 'POST',
   body: formData
 })
@@ -198,7 +205,7 @@ async function addBug()
             d5.appendChild(sp4);
             d5.append(li);
             d5.append(sp5);
-        });
+        });*/
 
     
 }

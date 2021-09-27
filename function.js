@@ -187,7 +187,6 @@ function displayOneBugPost(id, username, title, detail, rate)
     sp5.className = "text4";
     var btn = document.createElement("button");
     btn.type = "button";
-    btn.id = id;
     btn.className = "btn btn-default btn-sm";
     sp4.className = "glyphicon glyphicon-thumbs-up";
     btn.appendChild(sp4);
@@ -220,7 +219,7 @@ function displayBugDetail(id, username, title, detail)
 
 function updateRate(id)
 {
-    console.log("update vote");
+    console.log("update vote " + id);
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/updateRate';
     const request = new XMLHttpRequest();

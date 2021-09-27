@@ -160,7 +160,7 @@ function addBug()
 function displayOneBugPost(id, username, title, detail, rate)
 {
     var d1 = document.createElement("div");
-    d1.className = "d-flex justify-content-center py-2";
+    d1.className = "d-flex justify-content-center py-2 bugPost";
     var d2 = document.createElement("div");
     d2.className = "second py-2 px-2";
     var sp1 = document.createElement("span");

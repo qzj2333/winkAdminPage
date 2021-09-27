@@ -252,3 +252,9 @@ form
 .thumbupo {
     color: #17a2b8
 }
+
+.bugPost:hover
+{
+    cursor: pointer;
+    
+}

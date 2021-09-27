@@ -205,7 +205,10 @@ function displayOneBugPost(id, username, title, detail, rate)
     // d5.append(li);
     // d5.append(sp5);
     document.body.appendChild(d1);
-    //d1.addEventListener("click", displayBugDetail(id, username, title, detail));
+    d1.addEventListener("click", function()
+    {
+        displayBugDetail(id, username, title, detail)
+    }, false);
     btn.addEventListener("click", function() 
     { 
         updateRate(id);

@@ -224,9 +224,7 @@ function updateRate(id)
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        var id = request.responseText;
-
-        console.log("updateRate:"+id);
+        console.log("updateRate:"+request.responseText);
         // reload website
         //location.reload();
     }  

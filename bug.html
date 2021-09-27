@@ -63,7 +63,7 @@
           document.getElementById("logout").addEventListener("click", logout, false);
           body.addEventListener("click",function (e) 
           {
-            if (e.target.classList.contains('btn btn-default btn-sm')) 
+            if (e.target.className == 'btn btn-default btn-sm') 
             {
               updateRate(e.target.id)
             }

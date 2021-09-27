@@ -253,13 +253,7 @@ form
     color: #17a2b8
 }
 
-.bugPost
-{
-    margin-top: 5px;
-}
-
 .bugPost:hover
 {
     cursor: pointer;
-    
 }

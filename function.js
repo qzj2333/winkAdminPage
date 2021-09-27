@@ -180,9 +180,6 @@ function displayOneBugPost(id, username, title, detail, rate)
     sp3.innerHTML = rate;
     var sp4 = document.createElement("span");
     sp4.className = "glyphicon glyphicon-thumbs-up";
-    // sp4.class = "thumbup";
-    // var li = document.createElement("i");
-    // li.className = "fa fa-thumbs-o-up";
     var sp5 = document.createElement("span");
     sp5.className = "text4";
     var btn = document.createElement("button");
@@ -201,9 +198,6 @@ function displayOneBugPost(id, username, title, detail, rate)
     d3.appendChild(d5);
     d5.appendChild(sp3);
     d5.appendChild(btn);
-    //d5.appendChild(sp4);
-    // d5.append(li);
-    // d5.append(sp5);
     document.body.appendChild(d1);
     d1.addEventListener("click", function()
     {
@@ -215,9 +209,9 @@ function displayOneBugPost(id, username, title, detail, rate)
     }, false);
 }
 
-function displayBugDetail(id, username, title, detail)
+function displayBugDetail(id)
 {
-    console.log("displayBugDetail");
+    window.location.href = "bugDetail.html?id="+id;
 }
 
 function updateRate(id)
@@ -235,4 +229,10 @@ function updateRate(id)
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
+}
+
+function loadBugDetailPage()
+{
+    var qs = new Querystring();
+    console.log(qs.get("id"));
 }

@@ -233,6 +233,8 @@ function updateRate(id)
 
 function loadBugDetailPage()
 {
-    var qs = new Querystring();
-    console.log(qs.get("id"));
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get("id"));
 }

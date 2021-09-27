@@ -231,6 +231,5 @@ function updateRate(id)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    console.log("update vote send data ---" + data+"---");
     request.send(data);
 }

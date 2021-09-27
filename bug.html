@@ -61,6 +61,13 @@
           document.addEventListener("DOMContentLoaded", loadBugs);
           document.getElementById("submitBug").addEventListener("click", addBug);
           document.getElementById("logout").addEventListener("click", logout, false);
+          body.addEventListener("click",function (e) 
+          {
+            if (e.target.classList.contains('btn btn-default btn-sm')) 
+            {
+              updateRate(e.target.id)
+            }
+          });
         </script>
     </body>
 </html>

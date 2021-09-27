@@ -187,6 +187,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     sp5.className = "text4";
     var btn = document.createElement("button");
     btn.type = "button";
+    btn.id = id;
     btn.className = "btn btn-default btn-sm";
     sp4.className = "glyphicon glyphicon-thumbs-up";
     btn.appendChild(sp4);
@@ -206,7 +207,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     // d5.append(sp5);
     document.body.appendChild(d1);
     //d1.addEventListener("click", displayBugDetail(id, username, title, detail));
-    btn.addEventListener("click", updateRate(id), false);
+    //btn.addEventListener("click", updateRate(id), false);
 }
 
 function displayBugDetail(id, username, title, detail)

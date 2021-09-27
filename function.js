@@ -219,7 +219,6 @@ function displayBugDetail(id, username, title, detail)
 
 function updateRate(id)
 {
-    console.log("update vote " + id);
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/updateRate';
     const request = new XMLHttpRequest();
@@ -233,5 +232,6 @@ function updateRate(id)
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    console.log("update vote send data ---" + id+"---");
     request.send(id);
 }

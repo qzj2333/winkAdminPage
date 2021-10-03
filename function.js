@@ -343,6 +343,7 @@ function displayBugDetail()
             inputBox.placeholder = "Post a comment";
             var submitBtn = document.createElement("btn");
             submitBtn.className = "btn btn-default btn-sm";
+            submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()
             {
                 addResponse();

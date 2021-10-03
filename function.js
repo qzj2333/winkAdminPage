@@ -337,11 +337,18 @@ function displayBugDetail()
             var formDiv = document.createElement("div");
             formDiv.className = "post-comment";
             var inputBox = document.createElement("input");
+            inputBox.id = "comment";
             inputBox.type = "text";
             inputBox.className = "form-control";
             inputBox.placeholder = "Post a comment";
+            var submitBtn = document.createElement("btn");
+            submitBtn.className = "btn btn-default btn-sm";
+            submitBtn.addEventListener("click", function()
+            {
+                addResponse();
+            }, false);
             formDiv.appendChild(inputBox);
-
+            formDiv.appendChild(submitBtn);
             parentDiv.appendChild(formDiv);
         }  
         request2.open('POST', url2);
@@ -369,12 +376,14 @@ function updateRate(id)
     request.send(data);
 }
 
-function addBugDetail(content)
+function addResponse()
 {
-    var id = document.getElementById("bugID").value;
+    var id = document.getElementById("bugId").value;
+    var content = document.getElementById("comment").value;
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';
     var data = 'id='+id+'&username='+document.cookie+"&content="+content;
+    console.log("add comment: " + data);
     const request = new XMLHttpRequest();
     request.onload = () =>
     {

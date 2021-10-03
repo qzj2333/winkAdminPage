@@ -27,6 +27,7 @@ function signIn()
 
 function logout()
 {
+    document.cookie = "";
     window.location.href = "index.html";
 }
 
@@ -143,8 +144,8 @@ function addBug()
     var title = document.getElementById("title").value;
     var detail = document.getElementById("detail").value;
     // add to database
-    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugs';
-    var data = 'username=admin&title='+title+"&detail="+detail+"&rate=0";
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';
+    var data = 'username='+document.cookie+'&title='+title+"&detail="+detail;
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
@@ -234,5 +235,56 @@ function updateRate(id)
 function loadBugDetailPage()
 {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log(urlParams.get("id"));
+    var id = urlParams.get("id");
+    console.log(id);
+    document.getElementById("bugID").value = id; 
+    
+    var data = 'id='+id;
+    // load bug
+    var url1 = "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugByID";
+    const request1 = new XMLHttpRequest();
+    request1.onload = () =>
+    {
+        var response1 = request1.responseText;
+        // update website
+        //displayOneBugPost(id, document.cookie, title, detail, 0)
+        console.log("load bug bug by id " + response1);
+    }  
+    request1.open('GET', url1);
+    request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request1.send(data);
+
+    // load bug responses
+    var url2 = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugResponsesByID';
+    const request2 = new XMLHttpRequest();
+    request2.onload = () =>
+    {
+        var response2 = request2.responseText;
+        // update website
+        //displayOneBugPost(id, document.cookie, title, detail, 0)
+        console.log("load bug detail by id" + response2);
+    }  
+    request2.open('GET', url2);
+    request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request2.send(data);
+}
+
+function addBugDetail()
+{
+    var id = document.getElementById("bugID");
+    var content = "bla";//document.getElementById("??");
+    // add to database
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';
+    var data = 'id='+id+'&username='+document.cookie+"&content="+content;
+    const request = new XMLHttpRequest();
+    request.onload = () =>
+    {
+        var response = request.responseText;
+        // update website
+        //displayOneBugPost(id, document.cookie, title, detail, 0)
+        console.log("add bug detail: " + response)
+    }  
+    request.open('POST', url);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send(data);
 }

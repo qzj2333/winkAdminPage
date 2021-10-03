@@ -253,18 +253,18 @@ function displayBugDetail(id)
         console.log("load bug by id " + response1);
 
         //load bug responses
-        // var url2 = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugResponsesByID';
-        // const request2 = new XMLHttpRequest();
-        // request2.onload = () =>
-        // {
-        //     var response2 = request2.responseText;
-        //     // update website
-        //     //displayOneBugPost(id, document.cookie, title, detail, 0)
-        //     console.log("load bug detail by id" + response2);
-        // }  
-        // request2.open('POST', url2);
-        // request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        // request2.send(id);
+        var url2 = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugResponsesByID';
+        const request2 = new XMLHttpRequest();
+        request2.onload = () =>
+        {
+            var response2 = request2.responseText;
+            // update website
+            //displayOneBugPost(id, document.cookie, title, detail, 0)
+            console.log("load bug detail by id" + response2);
+        }  
+        request2.open('POST', url2);
+        request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        request2.send(data);
     }  
     request1.open('POST', url1);
     request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

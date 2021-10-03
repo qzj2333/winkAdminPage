@@ -312,7 +312,6 @@ function displayBugDetail()
             responses = JSON.parse(responses);
             for(var i = 0; i < responses.length; i++)
             {
-                console.log(responses[i] + "---" + responses[i]["username"] + ": " + responses[i]["content"]);
                 // display username
                 var responseDiv = document.createElement("div");
                 responseDiv.className = "post-text";

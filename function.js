@@ -274,9 +274,10 @@ function displayBugDetail()
         var thumbUpImg = document.createElement("i");
         thumbUpImg.className = "fa fa-thumbs-up";
         var rateNum = document.createElement("span");
-        rateNum.innerHTML = currBugInfo["rate"]["$numberLong"];
+        //rateNum.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.appendChild(thumbUpImg);
-        thumbUp.appendChild(rateNum);
+        thumbUp.innerHTML += currBugInfo["rate"]["$numberLong"];
+        //thumbUp.appendChild(rateNum);
         //thumbUp.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.addEventListener("click", function()
         {
@@ -320,7 +321,7 @@ function displayBugDetail()
                 profileA.innerHTML = responses[i]["username"];
                 responseP.appendChild(profileA);
                 // display content
-                responseP.innerHTML = responses[i]["content"];
+                responseP.innerHTML += responses[i]["content"];
                 responseDiv.appendChild(responseP);
 
                 parentDiv.appendChild(lineDivider);

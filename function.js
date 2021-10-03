@@ -280,7 +280,6 @@ function updateRate(id)
     var data = "id="+id;
     request.onload = () =>
     {
-        console.log("updateRate:"+request.responseText);
         // reload website
         location.reload();
     }  

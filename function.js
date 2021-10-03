@@ -141,6 +141,7 @@ function loadBugs()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
+        var data = request.response;
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];

@@ -310,20 +310,18 @@ function displayBugDetail()
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
             responses = JSON.parse(responses);
-            console.log(responses + "-------" + responses.length);
-            console.log(response[0]);
-            for(var response in responses)
+            for(var i = 0; i < responses.length; i++)
             {
-                
+                console.log(responses[i] + "---" + responses[i]["username"] + ": " + responses[i]["content"]);
                 // display username
                 var responseDiv = document.createElement("div");
                 responseDiv.className = "post-text";
                 var responseP = document.createElement("p");
                 var profileA = document.createElement("a");
                 profileA.className = "profile-link";
-                profileA.innerHTML = response["username"];
+                profileA.innerHTML = responses[i]["username"];
                 responseP.appendChild(profileA);
-                responseP.innerHTML = responses["content"];
+                responseP.innerHTML = responses[i]["content"];
                 responseDiv.appendChild(responseP);
 
                 // display content

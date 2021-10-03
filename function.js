@@ -255,20 +255,19 @@ function displayBugDetail()
         console.log("load bug by id " + currBugInfo);
         currBugInfo = JSON.parse(currBugInfo);
         console.log("json parse: " + currBugInfo);
-        console.log("username: " + currBugInfo["username"]);
-        console.log("time: " + currBugInfo["time"]);
+        console.log("time: " + currBugInfo["time"]["$date"]+ "-------"+currBugInfo["time"]["$date"]["$numberLong"]);
         // display current bug
         var parentDiv = document.getElementById("post-detail");
         // display user info
         var divUserInfo = document.createElement("div");
         divUserInfo.className = "user-info";
         var h5 = document.createElement("h5");
-        h5.innerHTML = currBugInfo.username;
+        h5.innerHTML = currBugInfo["username"];
         // display time
         var bugReportTime = document.createElement("p");
         bugReportTime.className = "text-muted";
         console.log("time:" + currBugInfo.time);
-        bugReportTime.innerHTML = "Published at " + currBugInfo.time.$date.$numberLong;
+        bugReportTime.innerHTML = "Published at " + currBugInfo["time"]["$date"]["$numberLong"];
         divUserInfo.appendChild(h5);
         divUserInfo.appendChild(bugReportTime);
         // add rating button
@@ -279,7 +278,7 @@ function displayBugDetail()
         var thumbUpImg = document.createElement("i");
         thumbUpImg.className = "fa fa-thumbs-up";
         thumbUp.appendChild(thumbUpImg);
-        thumbUp.innerHTML = currBugInfo.rate.$numberLong;
+        thumbUp.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.addEventListener("click", function()
         {
             updateRate(id);
@@ -292,7 +291,7 @@ function displayBugDetail()
         var content = document.createElement("div");
         content.className = "post-text";
         var contentP = document.createElement("p");
-        contentP.innerHTML = currBugInfo.detail;
+        contentP.innerHTML = currBugInfo["detail"];
         content.appendChild(contentP);
 
         parentDiv.appendChild(divUserInfo);

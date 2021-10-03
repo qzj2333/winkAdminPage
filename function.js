@@ -172,6 +172,7 @@ function addBug()
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    console.log(data);
     request.send(data);
 }
 

@@ -264,7 +264,7 @@ function displayBugDetail(id)
         }  
         request2.open('POST', url2);
         request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        request2.send();
+        request2.send(data);
     }  
     request1.open('POST', url1);
     request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

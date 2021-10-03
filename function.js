@@ -142,10 +142,12 @@ function loadBugs()
     request.onload = () =>
     {
         var data = request.response;
+        console.log(data);
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
-            displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
+            console.log(currData);
+            //displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
         }
     }  
     request.open('GET', url);

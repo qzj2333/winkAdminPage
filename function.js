@@ -276,6 +276,10 @@ function displayBugDetail()
         thumbUpImg.className = "fa fa-thumbs-up";
         thumbUp.appendChild(thumbUpImg);
         thumbUp.innerHTML = currBugInfo.rate.$numberLong;
+        thumbUp.addEventListener("click", function()
+        {
+            updateRate(id);
+        }, false);
         divRate.appendChild(thumbUp);
         // add line divider
         var lineDivider = document.createElement("div");

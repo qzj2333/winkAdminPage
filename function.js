@@ -264,7 +264,7 @@ function displayBugDetail()
         // display time
         var bugReportTime = document.createElement("p");
         bugReportTime.className = "text-muted";
-        bugReportTime.innerHTML = "Published at " + new Date(currBugInfo.time.$date);
+        bugReportTime.innerHTML = "Published at " + currBugInfo.time.$date.$numberLong;
         divUserInfo.appendChild(h5);
         divUserInfo.appendChild(bugReportTime);
         // add rating button

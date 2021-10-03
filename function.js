@@ -310,9 +310,11 @@ function displayBugDetail()
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
             responses = JSON.parse(responses);
+            console.log(responses + "-------" + responses.length);
+            console.log(response[0]);
             for(var response in responses)
             {
-                console.log(response);
+                
                 // display username
                 var responseDiv = document.createElement("div");
                 responseDiv.className = "post-text";

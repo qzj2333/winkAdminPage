@@ -224,7 +224,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     document.body.appendChild(d1);
     btn2.addEventListener("click", function()
     {
-        displayBugDetail(id, username, title, detail)
+        goBugDetailPage(id)
     }, false);
     btn1.addEventListener("click", function() 
     { 
@@ -232,12 +232,17 @@ function displayOneBugPost(id, username, title, detail, rate)
     }, false);
 }
 
-function displayBugDetail(id)
+function goBugDetailPage(id)
 {
-    //window.location.href = "bugDetail.html?id="+id;
+    window.location.href = "bugDetail.html?id="+id;
+}
 
-    //const urlParams = new URLSearchParams(window.location.search);
-    //var id = urlParams.get("id");
+function displayBugDetail()
+{
+    window.location.href = "bugDetail.html?id="+id;
+
+    const urlParams = new URLSearchParams(window.location.search);
+    var id = urlParams.get("id");
     //document.getElementById("bugID").value = id; 
     
     var data = 'id='+id;

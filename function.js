@@ -383,7 +383,7 @@ function addResponse()
     var id = document.getElementById("bugID").value;
     var content = document.getElementById("comment").value;
     // add to database
-    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBugResponse';
     var data = 'id='+id+'&username='+document.cookie+"&content="+content;
     console.log("add comment: " + data);
     const request = new XMLHttpRequest();

@@ -197,20 +197,20 @@ function displayOneBugPost(id, username, title, detail, rate)
     var sp3 = document.createElement("span");
     sp3.className = "text3";
     sp3.innerHTML = rate;
-    var sp4 = document.createElement("span");
-    sp4.className = "glyphicon glyphicon-thumbs-up";
+    // var sp4 = document.createElement("span");
+    // sp4.className = "glyphicon glyphicon-thumbs-up";
     var sp5 = document.createElement("span");
     sp5.className = "text4";
     var btn1 = document.createElement("button");
     btn1.type = "button";
     btn1.className = "btn btn-default btn-sm";
-    sp4.className = "glyphicon glyphicon-thumbs-up";
-    btn1.appendChild(sp4);
-    sp5.innerHTML = "Like";
+    //sp4.className = "glyphicon glyphicon-thumbs-up";
+    //btn1.appendChild(sp4);
+    sp5.innerHTML = "Expend";
     btn1.appendChild(sp5);
-    var btn2 = document.createElement("button");
-    btn2.type = "button";
-    btn2.innerHTML = "goDetail";    // detail page
+    // var btn2 = document.createElement("button");
+    // btn2.type = "button";
+    // btn2.innerHTML = "goDetail";    // detail page
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);
@@ -220,15 +220,16 @@ function displayOneBugPost(id, username, title, detail, rate)
     d3.appendChild(d5);
     d5.appendChild(sp3);
     d5.appendChild(btn1);
-    d5.appendChild(btn2);
+    //d5.appendChild(btn2);
     document.body.appendChild(d1);
-    btn2.addEventListener("click", function()
-    {
-        goBugDetailPage(id);
-    }, false);
+    // btn2.addEventListener("click", function()
+    // {
+    //     updateRate(id);
+    // }, false);
     btn1.addEventListener("click", function() 
     { 
-        updateRate(id);
+        goBugDetailPage(id);
+        
     }, false);
 }
 
@@ -240,7 +241,6 @@ function goBugDetailPage(id)
 function displayBugDetail()
 {
     //window.location.href = "bugDetail.html?id="+id;
-
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get("id");
     document.getElementById('bugID').value = id;

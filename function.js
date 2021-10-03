@@ -346,6 +346,7 @@ function displayBugDetail()
             submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()
             {
+                console.log("button click!");
                 addResponse();
             }, false);
             formDiv.appendChild(inputBox);

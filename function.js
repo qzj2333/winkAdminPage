@@ -239,7 +239,7 @@ function displayBugDetail(id)
     //const urlParams = new URLSearchParams(window.location.search);
     //var id = urlParams.get("id");
     console.log(id);
-    document.getElementById("bugID").value = id; 
+    //document.getElementById("bugID").value = id; 
     
     var data = 'id='+id;
     // load bug

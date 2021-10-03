@@ -250,7 +250,7 @@ function displayBugDetail(id)
         var response1 = request1.responseText;
         // update website
         //displayOneBugPost(id, document.cookie, title, detail, 0)
-        console.log("load bug bug by id " + response1);
+        console.log("load bug by id " + response1);
     }  
     request1.open('POST', url1);
     request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

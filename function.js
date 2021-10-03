@@ -310,6 +310,18 @@ function displayBugDetail()
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
             console.log("load bug detail by id" + responses);
+            
+
+            // add new response form
+            var formDiv = document.createElement("div");
+            formDiv.className = "post-comment";
+            var inputBox = document.createElement("input");
+            inputBox.type = "text";
+            inputBox.className = "form-control";
+            inputBox.placeholder = "Post a comment";
+            formDiv.appendChild(inputBox);
+
+            parentDiv.appendChild(formDiv);
         }  
         request2.open('POST', url2);
         request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

@@ -371,7 +371,7 @@ function addResponse()
     request.onload = () =>
     {
         // update website
-        displayBugDetail();
+        location.reload();
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');

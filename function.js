@@ -268,7 +268,8 @@ function displayBugDetail(id)
     }  
     request1.open('POST', url1);
     request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    request1.send(id);
+    //request1.send(id);
+    request1.send();
 }
 
 function updateRate(id)

@@ -243,8 +243,7 @@ function displayBugDetail()
 
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get("id");
-    //document.getElementById("bugID").value = id; 
-    
+    document.getElementById('bugID').value = id;
     var data = 'id='+id;
     console.log(data);
     // load bug
@@ -252,20 +251,20 @@ function displayBugDetail()
     const request1 = new XMLHttpRequest();
     request1.onload = () =>
     {
-        var response1 = request1.responseText;
+        var currBugInfo = request1.responseText;
         // update website
         //displayOneBugPost(id, document.cookie, title, detail, 0)
-        console.log("load bug by id " + response1);
+        console.log("load bug by id " + currBugInfo);
 
         //load bug responses
         var url2 = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugResponsesByID';
         const request2 = new XMLHttpRequest();
         request2.onload = () =>
         {
-            var response2 = request2.responseText;
+            var responses = request2.responseText;
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
-            console.log("load bug detail by id" + response2);
+            console.log("load bug detail by id" + responses);
         }  
         request2.open('POST', url2);
         request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -292,10 +291,9 @@ function updateRate(id)
     request.send(data);
 }
 
-function addBugDetail()
+function addBugDetail(content)
 {
-    var id = document.getElementById("bugID");
-    var content = "bla";//document.getElementById("??");
+    var id = document.getElementById("bugID").value;
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';
     var data = 'id='+id+'&username='+document.cookie+"&content="+content;

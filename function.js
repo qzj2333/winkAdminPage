@@ -320,12 +320,9 @@ function displayBugDetail()
                 profileA.className = "profile-link";
                 profileA.innerHTML = responses[i]["username"];
                 responseP.appendChild(profileA);
+                // display content
                 responseP.innerHTML = responses[i]["content"];
                 responseDiv.appendChild(responseP);
-
-                // display content
-                var responseDiv = document.createElement("div");
-                responseDiv.className = "post-text";
 
                 parentDiv.appendChild(lineDivider);
                 parentDiv.appendChild(responseDiv);

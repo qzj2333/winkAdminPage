@@ -120,22 +120,36 @@ function getMonthlyActiveUsers()
 
 }
 
-async function loadBugs()
+function loadBugs()
 {
-    const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs");
+    // const response = await fetch("https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs");
     
-    // Storing data in form of JSON
-    var data = await response.json();
-    console.log(data);
-    var currData;
-    if (response) 
+    // // Storing data in form of JSON
+    // var data = await response.json();
+    // console.log(data);
+    // var currData;
+    // if (response) 
+    // {
+    //     for(var i = 0; i < data.length; i++)
+    //     {
+    //         currData = data[i];
+    //         displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
+    //     }
+    // } 
+
+    var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs';
+    const request = new XMLHttpRequest();
+    request.onload = () =>
     {
         for(var i = 0; i < data.length; i++)
         {
             currData = data[i];
             displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
         }
-    } 
+    }  
+    request.open('GET', url);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    request.send();
 }
 
 /* bug page */

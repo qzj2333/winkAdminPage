@@ -253,7 +253,10 @@ function displayBugDetail()
     {
         var currBugInfo = request1.responseText;
         console.log("load bug by id " + currBugInfo);
-
+        currBugInfo = JSON.parse(currBugInfo);
+        console.log("json parse: " + currBugInfo);
+        console.log("username: " + currBugInfo["username"]);
+        console.log("time: " + currBugInfo["time"]);
         // display current bug
         var parentDiv = document.getElementById("post-detail");
         // display user info

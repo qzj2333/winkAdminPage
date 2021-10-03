@@ -224,7 +224,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     document.body.appendChild(d1);
     btn2.addEventListener("click", function()
     {
-        //displayBugDetail(id, username, title, detail)
+        displayBugDetail(id, username, title, detail)
     }, false);
     btn.addEventListener("click", function() 
     { 

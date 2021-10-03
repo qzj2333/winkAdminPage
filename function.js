@@ -273,7 +273,7 @@ function displayBugDetail()
         thumbUp.className = "btn text-green";
         var thumbUpImg = document.createElement("i");
         thumbUpImg.className = "fa fa-thumbs-up";
-        var rateNum = document.createElement("span");
+        //var rateNum = document.createElement("span");
         //rateNum.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.appendChild(thumbUpImg);
         thumbUp.innerHTML += currBugInfo["rate"]["$numberLong"];
@@ -306,7 +306,7 @@ function displayBugDetail()
         request2.onload = () =>
         {
             var responses = request2.responseText;
-            console.log("load bug detail by id" + responses);
+            console.log("load bug detail by id: " + responses);
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
             responses = JSON.parse(responses);

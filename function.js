@@ -251,9 +251,8 @@ function displayBugDetail()
     const request1 = new XMLHttpRequest();
     request1.onload = () =>
     {
-        var currBugInfo = request1.responseText;
-        console.log("load bug by id " + currBugInfo);
-        currBugInfo = JSON.parse(currBugInfo);
+        console.log("load bug by id " + request1.responseText);
+        var currBugInfo = JSON.parse(request1.responseText);
         // display current bug
         var parentDiv = document.getElementById("post-detail");
         // display user info
@@ -307,9 +306,31 @@ function displayBugDetail()
         request2.onload = () =>
         {
             var responses = request2.responseText;
+            responses = JSON.parse(responses);
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
             console.log("load bug detail by id" + responses);
+
+            for(var i = 0; i < responses.length; i++)
+            {
+                // display username
+                var responseDiv = document.createElement("div");
+                responseDiv.className = "post-text";
+                var responseP = document.createElement("p");
+                var profileA = document.createElement("a");
+                profileA.className = "profile-link";
+                profileA.innerHTML = responses[i]["username"];
+                responseP.appendChild(profileA);
+                responseP.innerHTML = responses[i]["content"];
+                responseDiv.appendChild(responseP);
+
+                // display content
+                var responseDiv = document.createElement("div");
+                responseDiv.className = "post-text";
+
+                parentDiv.appendChild(lineDivider);
+                parentDiv.appendChild(responseDiv);
+            }
             
 
             // add new response form

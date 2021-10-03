@@ -263,7 +263,6 @@ function displayBugDetail()
         // display time
         var bugReportTime = document.createElement("p");
         bugReportTime.className = "text-muted";
-        console.log("time:" + currBugInfo.time);
         bugReportTime.innerHTML = "Published at " + new Date(currBugInfo["time"]["$date"]["$numberLong"]);
         divUserInfo.appendChild(h5);
         divUserInfo.appendChild(bugReportTime);

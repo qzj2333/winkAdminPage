@@ -238,10 +238,10 @@ function displayBugDetail(id)
 
     //const urlParams = new URLSearchParams(window.location.search);
     //var id = urlParams.get("id");
-    console.log(id);
     //document.getElementById("bugID").value = id; 
     
     var data = 'id='+id;
+    console.log(data);
     // load bug
     var url1 = "https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugByID";
     const request1 = new XMLHttpRequest();

@@ -275,7 +275,10 @@ function displayBugDetail()
         thumbUp.className = "btn text-green";
         var thumbUpImg = document.createElement("i");
         thumbUpImg.className = "fa fa-thumbs-up";
+        var rateNum = document.createElement("span");
+        rateNum.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.appendChild(thumbUpImg);
+        thumbUp.appendChild(rateNum);
         //thumbUp.innerHTML = currBugInfo["rate"]["$numberLong"];
         thumbUp.addEventListener("click", function()
         {

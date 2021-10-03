@@ -306,10 +306,10 @@ function displayBugDetail()
         request2.onload = () =>
         {
             var responses = request2.responseText;
+            console.log("load bug detail by id" + responses);
             responses = JSON.parse(responses);
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
-            console.log("load bug detail by id" + responses);
 
             for(var i = 0; i < responses.length; i++)
             {

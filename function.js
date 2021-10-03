@@ -252,7 +252,7 @@ function displayBugDetail(id)
         //displayOneBugPost(id, document.cookie, title, detail, 0)
         console.log("load bug bug by id " + response1);
     }  
-    request1.open('GET', url1);
+    request1.open('POST', url1);
     request1.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request1.send(data);
 
@@ -266,7 +266,7 @@ function displayBugDetail(id)
         //displayOneBugPost(id, document.cookie, title, detail, 0)
         console.log("load bug detail by id" + response2);
     }  
-    request2.open('GET', url2);
+    request2.open('POST', url2);
     request2.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request2.send(data);
 }

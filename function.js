@@ -379,7 +379,7 @@ function updateRate(id)
 
 function addResponse()
 {
-    var id = document.getElementById("bugId").value;
+    var id = document.getElementById("bugID").value;
     var content = document.getElementById("comment").value;
     // add to database
     var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/addBug';

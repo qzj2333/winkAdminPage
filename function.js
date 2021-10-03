@@ -312,23 +312,8 @@ function displayBugDetail()
             responses = JSON.parse(responses);
             for(var i = 0; i < responses.length; i++)
             {
-                // display username
-                var responseDiv = document.createElement("div");
-                responseDiv.className = "post-text";
-                var responseP = document.createElement("p");
-                var profileA = document.createElement("a");
-                profileA.className = "profile-link";
-                profileA.innerHTML = responses[i]["username"];
-                responseP.appendChild(profileA);
-                // display content
-                responseP.innerHTML += responses[i]["content"];
-                responseDiv.appendChild(responseP);
-
-                parentDiv.appendChild(lineDivider);
-                parentDiv.appendChild(responseDiv);
+                displayABugResponse(responses[i]["username"], responses[i]["content"]);
             }
-            
-
             // add new response form
             var formDiv = document.createElement("div");
             formDiv.className = "post-comment";
@@ -385,12 +370,28 @@ function addResponse()
     const request = new XMLHttpRequest();
     request.onload = () =>
     {
-        var response = request.responseText;
         // update website
-        //displayOneBugPost(id, document.cookie, title, detail, 0)
-        console.log("add bug detail: " + response)
+        displayABugResponse(document.cookie, content);
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     request.send(data);
+}
+
+function displayABugResponse(username, content)
+{
+    // display username
+    var responseDiv = document.createElement("div");
+    responseDiv.className = "post-text";
+    var responseP = document.createElement("p");
+    var profileA = document.createElement("a");
+    profileA.className = "profile-link";
+    profileA.innerHTML = username;
+    responseP.appendChild(profileA);
+    // display content
+    responseP.innerHTML += content;
+    responseDiv.appendChild(responseP);
+
+    parentDiv.appendChild(lineDivider);
+    parentDiv.appendChild(responseDiv);
 }

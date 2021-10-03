@@ -239,7 +239,7 @@ function goBugDetailPage(id)
 
 function displayBugDetail()
 {
-    window.location.href = "bugDetail.html?id="+id;
+    //window.location.href = "bugDetail.html?id="+id;
 
     const urlParams = new URLSearchParams(window.location.search);
     var id = urlParams.get("id");

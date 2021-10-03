@@ -252,9 +252,46 @@ function displayBugDetail()
     request1.onload = () =>
     {
         var currBugInfo = request1.responseText;
-        // update website
-        //displayOneBugPost(id, document.cookie, title, detail, 0)
         console.log("load bug by id " + currBugInfo);
+
+        // display current bug
+        var parentDiv = document.getElementById("post-detail");
+        // display user info
+        var divUserInfo = document.createElement("div");
+        divUserInfo.className = "user-info";
+        var h5 = document.createElement("h5");
+        h5.innerHTML = currBugInfo.username;
+        // display time
+        var bugReportTime = document.createElement("p");
+        bugReportTime.className = "text-muted";
+        bugReportTime.innerHTML = "Published at " + new Date(response.time.$date);
+        divUserInfo.appendChild(h5);
+        divUserInfo.appendChild(bugReportTime);
+        // add rating button
+        var divRate = document.createElement("div");
+        divRate.className = "reaction";
+        var thumbUp = document.createElement("a");
+        thumbUp.className = "btn text-green";
+        var thumbUpImg = document.createElement("i");
+        thumbUpImg.className = "fa fa-thumbs-up";
+        thumbUp.appendChild(thumbUpImg);
+        thumbUp.innerHTML = currBugInfo.rate.$numberLong;
+        divRate.appendChild(thumbUp);
+        // add line divider
+        var lineDivider = document.createElement("div");
+        lineDivider.className = "line-divider";
+        // add content
+        var content = document.createElement("div");
+        content.className = "post-text";
+        var contentP = document.createElement("p");
+        contentP.innerHTML = currBugInfo.detail;
+        content.appendChild(contentP);
+
+        parentDiv.appendChild(divUserInfo);
+        parentDiv.appendChild(divRate);
+        parentDiv.appendChild(lineDivider);
+        parentDiv.appendChild(content);
+        parentDiv.appendChild(lineDivider);
 
         //load bug responses
         var url2 = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugResponsesByID';

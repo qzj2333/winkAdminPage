@@ -311,17 +311,18 @@ function displayBugDetail()
             // update website
             //displayOneBugPost(id, document.cookie, title, detail, 0)
 
-            for(var i = 0; i < responses.length; i++)
+            for(var response in responses)
             {
+                console.log(response);
                 // display username
                 var responseDiv = document.createElement("div");
                 responseDiv.className = "post-text";
                 var responseP = document.createElement("p");
                 var profileA = document.createElement("a");
                 profileA.className = "profile-link";
-                profileA.innerHTML = responses[i]["username"];
+                profileA.innerHTML = response["username"];
                 responseP.appendChild(profileA);
-                responseP.innerHTML = responses[i]["content"];
+                responseP.innerHTML = responses["content"];
                 responseDiv.appendChild(responseP);
 
                 // display content

@@ -393,6 +393,8 @@ function displayABugResponse(username, content)
     responseDiv.appendChild(responseP);
 
     var parentDiv = document.getElementById("post-detail");
+    var lineDivider = document.createElement("div");
+    lineDivider.className = "line-divider";
     parentDiv.appendChild(lineDivider);
     parentDiv.appendChild(responseDiv);
 }

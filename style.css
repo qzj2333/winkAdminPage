@@ -339,7 +339,7 @@ form
 
   #formDiv
   {
-      display: inline;
+      display: inline-block;
   }
 
   #submitBtn

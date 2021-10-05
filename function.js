@@ -206,7 +206,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     btn1.className = "btn btn-default btn-sm";
     //sp4.className = "glyphicon glyphicon-thumbs-up";
     //btn1.appendChild(sp4);
-    sp5.innerHTML = "Expend";
+    sp5.innerHTML = "Detail";
     btn1.appendChild(sp5);
     // var btn2 = document.createElement("button");
     // btn2.type = "button";
@@ -386,7 +386,7 @@ function displayABugResponse(username, content)
     var responseP = document.createElement("p");
     var profileA = document.createElement("a");
     profileA.className = "profile-link";
-    profileA.innerHTML = username;
+    profileA.innerHTML = username + "   ";
     responseP.appendChild(profileA);
     // display content
     responseP.innerHTML += content;

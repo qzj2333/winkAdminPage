@@ -93,7 +93,6 @@ function goToCSV()
 {
     window.open("https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing", '_blank');
     //window.location.href = "https://docs.google.com/spreadsheets/d/19P1bQaDe8gEU-Wfk_nPPOsMi-rBnn0_k37ORqTMUmo4/edit?usp=sharing";
-    //setcookie("CookieName", "CookieValue", 2147483647);
 }
 
 function displayActiveUserChart()
@@ -135,24 +134,7 @@ async function loadBugs()
             currData = data[i];
             displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
         }
-    } 
-
-    // var url = 'https://us-east-1.aws.webhooks.mongodb-realm.com/api/client/v2.0/app/winkdb-googlesheet-htaow/service/adminWebsite/incoming_webhook/getBugs';
-    // const request = new XMLHttpRequest();
-    // request.onload = () =>
-    // {
-    //     var data = request.response;
-    //     console.log(data);
-    //     for(var i = 0; i < data.length; i++)
-    //     {
-    //         currData = data[i];
-    //         console.log(currData);
-    //         //displayOneBugPost(currData._id.$oid, currData.username, currData.title, currData.detail, currData.rate.$numberLong);
-    //     }
-    // }  
-    // request.open('GET', url);
-    // request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    // request.send();
+    }
 }
 
 /* bug page */
@@ -168,7 +150,7 @@ function addBug()
     {
         var id = request.responseText;
         // update website
-        displayOneBugPost(id, document.cookie, title, detail, 0)
+        location.reload();
     }  
     request.open('POST', url);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -201,16 +183,13 @@ function displayOneBugPost(id, username, title, detail, rate)
     // sp4.className = "glyphicon glyphicon-thumbs-up";
     var sp5 = document.createElement("span");
     sp5.className = "text4";
-    var btn1 = document.createElement("button");
-    btn1.type = "button";
-    btn1.className = "btn btn-default btn-sm";
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "btn btn-default btn-sm";
     //sp4.className = "glyphicon glyphicon-thumbs-up";
-    //btn1.appendChild(sp4);
+    //btn.appendChild(sp4);
     sp5.innerHTML = "Detail";
-    btn1.appendChild(sp5);
-    // var btn2 = document.createElement("button");
-    // btn2.type = "button";
-    // btn2.innerHTML = "goDetail";    // detail page
+    btn.appendChild(sp5);
     d1.appendChild(d2);
     d2.appendChild(sp1);
     d2.appendChild(d3);
@@ -219,13 +198,8 @@ function displayOneBugPost(id, username, title, detail, rate)
     d4.appendChild(sp2);
     d3.appendChild(d5);
     d5.appendChild(sp3);
-    d5.appendChild(btn1);
-    //d5.appendChild(btn2);
+    d5.appendChild(btn);
     document.body.appendChild(d1);
-    // btn2.addEventListener("click", function()
-    // {
-    //     updateRate(id);
-    // }, false);
     btn1.addEventListener("click", function() 
     { 
         goBugDetailPage(id);
@@ -327,7 +301,6 @@ function displayBugDetail()
             submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()
             {
-                console.log("button click!");
                 addResponse();
             }, false);
             formDiv.appendChild(inputBox);

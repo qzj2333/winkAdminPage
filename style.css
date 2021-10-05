@@ -337,12 +337,8 @@ form
       margin-left: 20px;
   }
 
-  #formDiv
-  {
-      display: inline-block;
-  }
-
   #submitBtn
   {
       float: right;
+      margin-top: 2px;
   }

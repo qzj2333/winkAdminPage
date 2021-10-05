@@ -298,6 +298,10 @@ function displayBugDetail()
             inputBox.placeholder = "Post a comment";
             var submitBtn = document.createElement("button");
             submitBtn.className = "btn btn-default btn-sm";
+            var sp = document.createElement("span");
+            sp.className = "text4";
+            sp.innerHTML = "Submit";
+            submitBtn.appendChild(sp);
             submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()
             {

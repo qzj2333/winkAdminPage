@@ -297,12 +297,12 @@ function displayBugDetail()
             inputBox.className = "form-control";
             inputBox.placeholder = "Post a comment";
             var submitBtn = document.createElement("button");
+            submitBtn.id = "submitBtn";
             submitBtn.className = "btn btn-default btn-sm";
             var sp = document.createElement("span");
             sp.className = "text4";
             sp.innerHTML = "Submit";
             submitBtn.appendChild(sp);
-            submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()
             {
                 addResponse();

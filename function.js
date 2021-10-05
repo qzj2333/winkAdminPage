@@ -296,7 +296,7 @@ function displayBugDetail()
             inputBox.type = "text";
             inputBox.className = "form-control";
             inputBox.placeholder = "Post a comment";
-            var submitBtn = document.createElement("btn");
+            var submitBtn = document.createElement("button");
             submitBtn.className = "btn btn-default btn-sm";
             submitBtn.value = "Submit";
             submitBtn.addEventListener("click", function()

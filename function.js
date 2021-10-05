@@ -290,6 +290,7 @@ function displayBugDetail()
             }
             // add new response form
             var formDiv = document.createElement("div");
+            formDiv.id = "formDiv";
             formDiv.className = "post-comment";
             var inputBox = document.createElement("input");
             inputBox.id = "comment";

@@ -337,6 +337,11 @@ form
       margin-left: 20px;
   }
 
+  #formDiv
+  {
+      display: inline;
+  }
+
   #submitBtn
   {
       float: right;

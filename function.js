@@ -200,7 +200,7 @@ function displayOneBugPost(id, username, title, detail, rate)
     d5.appendChild(sp3);
     d5.appendChild(btn);
     document.body.appendChild(d1);
-    btn1.addEventListener("click", function() 
+    btn.addEventListener("click", function() 
     { 
         goBugDetailPage(id);
         
